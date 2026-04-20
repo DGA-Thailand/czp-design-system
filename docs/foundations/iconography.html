@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="th">
+<head><meta charset="utf-8"><title>ไอคอน · CZP Design System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../docs.css">
+<style>
+  .icon-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin: 16px 0 24px; }
+  .icon-cell { border: 1px solid var(--stroke-neutral-lighter); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; background: var(--canvas-white); }
+  .icon-cell:hover { background: var(--canvas-bright); }
+  .icon-cell svg { color: var(--foreground-neutral-default); }
+  .icon-name { font-family: ui-monospace, Menlo, monospace; font-size: 10px; color: var(--foreground-neutral-lighter); }
+</style>
+</head>
+<body>
+<div class="docs-layout">
+  <aside class="docs-sidebar" id="docs-sidebar"></aside>
+  <main class="docs-main">
+    <div class="docs-eyebrow">พื้นฐาน</div>
+    <h1 class="docs-title">ไอคอน</h1>
+    <p class="docs-lead">CZP ใช้ <strong>lucide-react</strong> เป็นไลบรารีหลัก (stroke 2px, rounded caps/joins) และ <strong>Material Symbols</strong> เป็นชุดเสริม — ห้ามใช้อีโมจิในส่วนของผลิตภัณฑ์</p>
+    <div class="placeholder">หลักการ: ไอคอนสื่อความหมายควรมีข้อความประกอบ · ขนาดมาตรฐาน 16/20/24 · สีตามบริบท (neutral/primary/status)</div>
+    <h2>ตัวอย่างไอคอน</h2>
+    <div class="icon-grid" id="ico"></div>
+    <h2>แนวทางการใช้</h2>
+    <ul>
+      <li>ขนาดเริ่มต้น <code>20px</code> สำหรับ UI ทั่วไป, <code>16px</code> ในป้าย, <code>24px</code> ในปุ่มใหญ่</li>
+      <li>สีสืบทอดจาก <code>currentColor</code> — เปลี่ยนผ่าน <code>color</code> ของอีลีเมนต์ครอบ</li>
+      <li>ต้องมี <code>aria-hidden="true"</code> หากมีข้อความประกอบอยู่แล้ว หรือ <code>aria-label</code> หากใช้เดี่ยว</li>
+    </ul>
+  </main>
+</div>
+<script src="../docs.js"></script>
+<script>
+  const icons = {
+    search: '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+    bell: '<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>',
+    menu: '<path d="M4 12h16"/><path d="M4 6h16"/><path d="M4 18h16"/>',
+    user: '<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+    check: '<path d="M20 6 9 17l-5-5"/>',
+    x: '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+    home: '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
+    file: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>',
+    calendar: '<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>',
+    creditCard: '<rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>',
+    shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>',
+    heart: '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>',
+    clock: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+    info: '<circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>',
+    download: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>',
+    plus: '<line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>',
+    globe: '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+    settings: '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>',
+  };
+  document.getElementById('ico').innerHTML = Object.entries(icons).map(([n,p]) => `
+    <div class="icon-cell" data-copy='&lt;Icon name="${n}" /&gt;'>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${p}</svg>
+      <div class="icon-name">${n}</div>
+    </div>`).join('');
+</script>
+</body>
+</html>

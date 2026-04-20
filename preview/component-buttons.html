@@ -1,0 +1,42 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { background: var(--canvas-bright); }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .btn {
+    border-radius: 1000px;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0 16px;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all .15s;
+    white-space: nowrap;
+  }
+  .default { background: #008858; color: #fff; }
+  .destructive { background: #d92d20; color: #fff; }
+  .outline { background: transparent; color: #006643; border: 1px solid #006643; }
+  .secondary { background: #dfe7f6; color: #325fb4; }
+  .tertiary { background: #f1f3f3; color: #373c41; }
+  .ghost { background: transparent; color: #373c41; }
+  .link { background: transparent; color: #008858; text-decoration: underline; padding: 0 8px; min-height: auto; }
+  .disabled { background: #ebecee; color: #b4b8bb; cursor: not-allowed; }
+</style></head><body>
+<div class="card">
+  <div class="row">
+    <button class="btn default">ยืนยัน</button>
+    <button class="btn destructive">ลบ</button>
+    <button class="btn outline">ยกเลิก</button>
+    <button class="btn secondary">สำรอง</button>
+    <button class="btn tertiary">ข้าม</button>
+    <button class="btn ghost">Ghost</button>
+    <button class="btn link">ลิงก์</button>
+    <button class="btn disabled" disabled>ปิดใช้งาน</button>
+  </div>
+</div>
+</body></html>

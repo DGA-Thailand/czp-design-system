@@ -1,0 +1,49 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { background: var(--canvas-bright); }
+  .stack { display: flex; flex-direction: column; gap: 10px; }
+  .toast {
+    display: flex; align-items: flex-start; gap: 12px;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+  .icon-wrap {
+    width: 32px; height: 32px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-weight: 700;
+  }
+  .title { font-weight: 600; font-size: 14px; line-height: 20px; }
+  .desc { font-size: 12px; opacity: .82; margin-top: 2px; }
+  .success { background: #f6fef9; border: 1px solid #dcfae6; color: #085d3a; }
+  .success .icon-wrap { background: #dcfae6; color: #085d3a; }
+  .info { background: #fcfaff; border: 1px solid #adebd2; color: #006643; }
+  .info .icon-wrap { background: #ebfaf4; color: #006643; }
+  .warning { background: #fffcf5; border: 1px solid #fef0c7; color: #93370d; }
+  .warning .icon-wrap { background: #fef0c7; color: #93370d; }
+  .error { background: #fef3f2; border: 1px solid #fecdca; color: #93370d; }
+  .error .icon-wrap { color: #912018; }
+</style></head><body>
+<div class="card">
+  <div class="stack">
+    <div class="toast success">
+      <div class="icon-wrap">✓</div>
+      <div><div class="title">บันทึกสำเร็จ</div><div class="desc">ข้อมูลของคุณถูกบันทึกเรียบร้อย</div></div>
+    </div>
+    <div class="toast info">
+      <div class="icon-wrap">i</div>
+      <div><div class="title">ข้อมูลเพิ่มเติม</div><div class="desc">มีการอัปเดตใหม่สำหรับคุณ</div></div>
+    </div>
+    <div class="toast warning">
+      <div class="icon-wrap">!</div>
+      <div><div class="title">คำเตือน</div><div class="desc">กรุณาตรวจสอบข้อมูลอีกครั้ง</div></div>
+    </div>
+    <div class="toast error">
+      <div class="icon-wrap">✕</div>
+      <div><div class="title">เกิดข้อผิดพลาด</div><div class="desc">ไม่สามารถเชื่อมต่อระบบได้</div></div>
+    </div>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="th">
+<head><meta charset="utf-8"><title>Avatars · CZP Design System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../docs.css">
+<style>
+  .row { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin: 16px 0; }
+  .av { border-radius: 1000px; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0; background: linear-gradient(135deg, var(--primary-40), var(--primary-30-base)); }
+  .sm { width: 28px; height: 28px; font-size: 12px; }
+  .md { width: 44px; height: 44px; font-size: 16px; }
+  .lg { width: 64px; height: 64px; font-size: 22px; }
+  .sec { background: linear-gradient(135deg, var(--secondary-50), var(--secondary-40-main)); }
+  .nt { background: var(--neutral-94); color: var(--foreground-neutral-lighter); }
+  .stack { display: flex; }
+  .stack .av { border: 2px solid #fff; margin-left: -10px; }
+  .stack .av:first-child { margin-left: 0; }
+  .plus { background: var(--secondary-90); color: var(--secondary-40-main); }
+</style>
+</head>
+<body>
+<div class="docs-layout">
+  <aside class="docs-sidebar" id="docs-sidebar"></aside>
+  <main class="docs-main">
+    <div class="docs-eyebrow">คอมโพเนนต์</div>
+    <h1 class="docs-title">Avatars</h1>
+    <p class="docs-lead">ตัวแทนผู้ใช้หรือหน่วยงาน ทรงกลมเต็ม ขนาด sm (28) / md (44) / lg (64) รองรับ initials, รูปภาพ และซ้อนกลุ่ม</p>
+
+    <h2>ขนาดและชนิด</h2>
+    <div class="row">
+      <div class="av sm">ก</div>
+      <div class="av md">ก</div>
+      <div class="av lg">ก</div>
+      <div class="av md sec">ส</div>
+      <div class="av md nt">?</div>
+    </div>
+
+    <h2>กลุ่มซ้อน</h2>
+    <div class="stack">
+      <div class="av md">A</div>
+      <div class="av md sec">B</div>
+      <div class="av md nt">C</div>
+      <div class="av md plus">+5</div>
+    </div>
+
+    <h2>แนวทาง</h2>
+    <ul>
+      <li>ใช้อักษรตัวแรกของชื่อจริงเป็น fallback เมื่อไม่มีรูป</li>
+      <li>กลุ่มซ้อนแสดงได้สูงสุด 3 ตัว แล้วใช้ <code>+N</code> bar</li>
+    </ul>
+  </main>
+</div>
+<script src="../docs.js"></script>
+</body>
+</html>

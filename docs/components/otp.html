@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="th">
+<head><meta charset="utf-8"><title>OTP Input · CZP Design System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../docs.css">
+<style>
+  .otp { display: flex; gap: 8px; margin: 8px 0 16px; }
+  .cell { width: 44px; height: 52px; border-radius: 10px; border: 1.5px solid var(--stroke-neutral-default); background: #fff; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 600; color: var(--foreground-neutral-dark); }
+  .cell.focus { border-color: var(--primary-30-base); outline: 3px solid var(--primary-95); }
+  .cell.err { border-color: var(--danger-50-main); color: var(--danger-50-main); }
+  .lbl { font-size: 11px; color: var(--foreground-neutral-lighter); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; margin: 0 0 6px; }
+</style>
+</head>
+<body>
+<div class="docs-layout">
+  <aside class="docs-sidebar" id="docs-sidebar"></aside>
+  <main class="docs-main">
+    <div class="docs-eyebrow">คอมโพเนนต์</div>
+    <h1 class="docs-title">OTP Input</h1>
+    <p class="docs-lead">ช่องกรอกรหัสยืนยัน 6 หลักแบบแยกช่อง ใช้สำหรับ 2FA และยืนยันตัวตน — มุมโค้ง 10px ขนาด 44×52</p>
+
+    <h2>สถานะ</h2>
+    <div class="lbl">กำลังกรอก</div>
+    <div class="otp"><div class="cell">1</div><div class="cell">2</div><div class="cell">3</div><div class="cell focus"></div><div class="cell"></div><div class="cell"></div></div>
+    <div class="lbl">ผิดพลาด</div>
+    <div class="otp"><div class="cell err">9</div><div class="cell err">9</div><div class="cell err">9</div><div class="cell err">9</div><div class="cell err">9</div><div class="cell err">9</div></div>
+
+    <h2>แนวทาง</h2>
+    <ul>
+      <li>Auto-advance cursor ไปช่องถัดไปเมื่อพิมพ์เลข · backspace กลับช่องก่อนหน้า</li>
+      <li>รองรับการวาง (paste) รหัสทั้งชุดเข้าช่องแรก ระบบแยกให้อัตโนมัติ</li>
+      <li>แสดงตัวจับเวลา resend ด้านล่าง — ส่งใหม่ได้หลัง 60 วินาที</li>
+    </ul>
+  </main>
+</div>
+<script src="../docs.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="th">
+<head><meta charset="utf-8"><title>Toggles · CZP Design System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../docs.css">
+<style>
+  .row { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; margin: 16px 0; }
+  .sw { position: relative; width: 44px; height: 24px; background: var(--stroke-neutral-default); border-radius: 1000px; }
+  .sw::after { content:''; position:absolute; top:2px; left:2px; width:20px; height:20px; border-radius:50%; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.2); }
+  .sw.on { background: var(--primary-30-base); }
+  .sw.on::after { left: 22px; }
+  .cb { width: 20px; height: 20px; border-radius: 6px; border: 1.5px solid var(--stroke-neutral-default); background: #fff; display: inline-flex; align-items: center; justify-content: center; }
+  .cb.on { background: var(--primary-30-base); border-color: var(--primary-30-base); color: #fff; font-size: 13px; font-weight: 700; }
+  .r { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid var(--stroke-neutral-default); background: #fff; display: inline-flex; align-items: center; justify-content: center; }
+  .r.on { border-color: var(--primary-30-base); }
+  .r.on::after { content:''; width: 10px; height: 10px; border-radius: 50%; background: var(--primary-30-base); }
+  .lab { font-size: 14px; color: var(--foreground-neutral-dark); display: flex; align-items: center; gap: 8px; }
+</style>
+</head>
+<body>
+<div class="docs-layout">
+  <aside class="docs-sidebar" id="docs-sidebar"></aside>
+  <main class="docs-main">
+    <div class="docs-eyebrow">คอมโพเนนต์</div>
+    <h1 class="docs-title">Toggles, Checkbox, Radio</h1>
+    <p class="docs-lead">ตัวเลือกแบบ binary และ multi-select ขนาด 20–24px เหมาะกับนิ้วสัมผัสบนมือถือ</p>
+    <h2>Switch</h2>
+    <div class="row"><div class="lab"><span class="sw"></span> ปิด</div><div class="lab"><span class="sw on"></span> เปิด</div></div>
+    <h2>Checkbox</h2>
+    <div class="row"><div class="lab"><span class="cb"></span> ตัวเลือก</div><div class="lab"><span class="cb on">✓</span> เลือกแล้ว</div></div>
+    <h2>Radio</h2>
+    <div class="row"><div class="lab"><span class="r"></span> ตัวเลือก A</div><div class="lab"><span class="r on"></span> ตัวเลือก B</div></div>
+
+    <h2>แนวทาง</h2>
+    <ul>
+      <li>Switch = ผลมีทันที (เปิด/ปิดฟีเจอร์) · Checkbox = รอยืนยัน (ต้องกดบันทึก)</li>
+      <li>Radio ใช้เมื่อมีตัวเลือก 2–5 ตัว และต้องการให้ผู้ใช้เห็นทุกตัวเลือก — ถ้ามากกว่านั้นใช้ Dropdown แทน</li>
+    </ul>
+  </main>
+</div>
+<script src="../docs.js"></script>
+</body>
+</html>

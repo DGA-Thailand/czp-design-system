@@ -1,0 +1,50 @@
+@import url("../colors_and_type.css");
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--canvas-white);
+  font-family: var(--font-family-base);
+  color: var(--foreground-neutral-default);
+}
+
+.card {
+  padding: 20px 24px;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mono {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 11px;
+  color: var(--foreground-neutral-lighter);
+}
+
+.swatch {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  border: 1px solid var(--stroke-neutral-lighter);
+  flex-shrink: 0;
+}
+
+.label {
+  font-size: 12px;
+  color: var(--foreground-neutral-lighter);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}

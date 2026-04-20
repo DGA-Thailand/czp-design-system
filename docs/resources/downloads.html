@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="th">
+<head><meta charset="utf-8"><title>ดาวน์โหลด · CZP Design System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../docs.css">
+<style>
+  .dl-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 16px 0 24px; }
+  .dl-card { border: 1px solid var(--stroke-neutral-lighter); border-radius: 12px; padding: 20px; background: #fff; display: flex; flex-direction: column; gap: 10px; }
+  .dl-title { font-weight: 600; font-size: 16px; color: var(--foreground-neutral-dark); }
+  .dl-desc { font-size: 13px; color: var(--foreground-neutral-lighter); }
+  .dl-btn { align-self: flex-start; background: var(--primary-30-base); color: #fff; padding: 10px 16px; border-radius: 1000px; font-size: 14px; font-weight: 500; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="docs-layout">
+  <aside class="docs-sidebar" id="docs-sidebar"></aside>
+  <main class="docs-main">
+    <div class="docs-eyebrow">ทรัพยากร</div>
+    <h1 class="docs-title">ดาวน์โหลด</h1>
+    <p class="docs-lead">ไฟล์โทเค็น ฟอนต์ และคู่มือการใช้งานทั้งหมดของ CZP Design System</p>
+
+    <h2>ไฟล์</h2>
+    <div class="dl-grid">
+      <div class="dl-card">
+        <div class="dl-title">colors_and_type.css</div>
+        <div class="dl-desc">CSS custom properties ครบทุกโทเค็น (สี, ตัวอักษร, ระยะห่าง, มุมโค้ง, เงา) พร้อม utility class</div>
+        <a class="dl-btn" href="/colors_and_type.css" download>ดาวน์โหลด .css</a>
+      </div>
+      <div class="dl-card">
+        <div class="dl-title">tokens.json</div>
+        <div class="dl-desc">โทเค็นในรูปแบบ JSON เหมาะกับ Figma Token Studio, Style Dictionary</div>
+        <a class="dl-btn" href="/tokens.json" download>ดาวน์โหลด .json</a>
+      </div>
+      <div class="dl-card">
+        <div class="dl-title">Anuphan Font (7 น้ำหนัก)</div>
+        <div class="dl-desc">ไฟล์ .ttf ทั้งหมด Thin 100 → Bold 700 สำหรับ self-hosted</div>
+        <a class="dl-btn" href="/fonts/" download>เปิดโฟลเดอร์ fonts/</a>
+      </div>
+      <div class="dl-card">
+        <div class="dl-title">DESIGN.md (spec ต้นฉบับ)</div>
+        <div class="dl-desc">สเปกดีไซน์ซิสเต็มแบบ machine-readable — โทเค็นทั้งหมด, คอมโพเนนต์, การใช้งาน</div>
+        <a class="dl-btn" href="/uploads/DESIGN.md" download>ดาวน์โหลด .md</a>
+      </div>
+      <div class="dl-card">
+        <div class="dl-title">UI Kit (React prototype)</div>
+        <div class="dl-desc">Interactive prototype ของ Header, Hero, ServiceGrid, StatusRow, Footer, LoginModal</div>
+        <a class="dl-btn" href="/ui_kits/czp-web/index.html">เปิด prototype</a>
+      </div>
+      <div class="dl-card">
+        <div class="dl-title">SKILL.md</div>
+        <div class="dl-desc">ไฟล์ Agent Skill สำหรับ Claude Code — ใส่โฟลเดอร์นี้เพื่อให้เอเจนต์อ้างอิงได้ทันที</div>
+        <a class="dl-btn" href="/SKILL.md" download>ดาวน์โหลด .md</a>
+      </div>
+    </div>
+
+    <h2>การนำไปใช้</h2>
+    <ul>
+      <li><strong>Next.js / React</strong> — import <code>colors_and_type.css</code> ใน root layout และใช้ CSS variables โดยตรง</li>
+      <li><strong>Figma</strong> — import <code>tokens.json</code> ผ่าน Token Studio เพื่อ sync กับไฟล์ดีไซน์</li>
+      <li><strong>Flutter (czp-mobile)</strong> — โทเค็นชุดเดียวกัน ให้ใช้ค่า hex ตรง ๆ จาก <code>tokens.json</code></li>
+    </ul>
+  </main>
+</div>
+<script src="../docs.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="th">
+<head><meta charset="utf-8"><title>ระยะห่าง · CZP Design System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../docs.css">
+<style>
+  .sp-row { display: grid; grid-template-columns: 120px 80px 1fr 120px; gap: 16px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--stroke-neutral-lighter); cursor: pointer; }
+  .sp-row:hover { background: var(--canvas-bright); }
+  .sp-name { font-family: ui-monospace, Menlo, monospace; font-size: 12px; color: var(--foreground-neutral-default); padding-left: 8px; }
+  .sp-val { font-family: ui-monospace, Menlo, monospace; font-size: 12px; color: var(--foreground-neutral-lighter); }
+  .sp-bar { height: 20px; background: var(--primary-30-base); border-radius: 4px; }
+  .sp-use { font-size: 12px; color: var(--foreground-neutral-lighter); padding-right: 8px; }
+</style>
+</head>
+<body>
+<div class="docs-layout">
+  <aside class="docs-sidebar" id="docs-sidebar"></aside>
+  <main class="docs-main">
+    <div class="docs-eyebrow">พื้นฐาน</div>
+    <h1 class="docs-title">ระยะห่าง</h1>
+    <p class="docs-lead">สเกลระยะห่างจาก 2px ถึง 160px ใช้กับ padding, margin, gap และระยะระหว่างองค์ประกอบทุกประเภท</p>
+    <div class="placeholder">แนวทางการเลือกใช้ระยะห่าง · ระยะแนวนอนหน้าจอ (16 mobile / 32 desktop) · ระยะแนวตั้งระหว่างส่วน</div>
+
+    <h2>สเกล</h2>
+    <div id="sp-list"></div>
+  </main>
+</div>
+<script src="../docs.js"></script>
+<script>
+  const scale = [
+    ['none','0px','—'],['xxs','2px','เส้นบาง'],['xs','4px','ช่องว่างขนาดเล็ก'],
+    ['sm','6px','ช่องว่างภายในป้าย'],['md','8px','ช่องว่างระหว่าง chip'],
+    ['lg','12px','ช่องว่างภายในปุ่ม'],['xl','16px','padding card · แนวนอนมือถือ'],
+    ['2xl','20px','ระยะระหว่างองค์ประกอบ'],['3xl','24px','ระยะระหว่างส่วน'],
+    ['4xl','32px','padding แนวนอนเดสก์ท็อป'],['5xl','40px','ระยะ hero'],
+    ['6xl','48px','ระยะ hero ใหญ่'],['7xl','64px','ระยะระหว่างบล็อก'],
+    ['8xl','80px','ระยะ section'],['9xl','96px','ระยะ section ใหญ่'],
+    ['10xl','128px','ระยะ layout'],['11xl','160px','ระยะ layout สูงสุด'],
+  ];
+  const host = document.getElementById('sp-list');
+  host.innerHTML = scale.map(([n,v,u]) => `
+    <div class="sp-row" data-copy="var(--spacing-${n})">
+      <div class="sp-name">--spacing-${n}</div>
+      <div class="sp-val">${v}</div>
+      <div><div class="sp-bar" style="width:${v}"></div></div>
+      <div class="sp-use">${u}</div>
+    </div>`).join('');
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="th">
+<head><meta charset="utf-8"><title>เงา · CZP Design System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../docs.css">
+<style>
+  .sh-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 16px 0 24px; }
+  .sh-card { background: var(--canvas-bright); padding: 32px; border-radius: 16px; text-align: center; cursor: pointer; }
+  .sh-demo { width: 100%; aspect-ratio: 4/3; background: #fff; border-radius: 12px; margin-bottom: 16px; }
+  .sh-name { font-family: ui-monospace, Menlo, monospace; font-size: 12px; color: var(--foreground-neutral-default); }
+  .sh-use { font-size: 12px; color: var(--foreground-neutral-lighter); margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="docs-layout">
+  <aside class="docs-sidebar" id="docs-sidebar"></aside>
+  <main class="docs-main">
+    <div class="docs-eyebrow">พื้นฐาน</div>
+    <h1 class="docs-title">เงา</h1>
+    <p class="docs-lead">ระบบเงาใช้เพียง 3 ระดับ เน้นความรู้สึกของสถาบัน — เงาอ่อน ใช้สื่อสารลำดับชั้น ไม่ใช้เพื่อการตกแต่ง</p>
+    <div class="placeholder">เกณฑ์การเลือกเงา · เงากับ border ในระบบนี้ (เราใช้ border 1px เป็นหลัก เงาเสริม)</div>
+    <h2>ระดับ</h2>
+    <div class="sh-grid">
+      <div class="sh-card" data-copy="var(--shadow-custom)"><div class="sh-demo" style="box-shadow:var(--shadow-custom)"></div><div class="sh-name">--shadow-custom</div><div class="sh-use">card เริ่มต้น · header</div></div>
+      <div class="sh-card" data-copy="var(--shadow-custom-lg)"><div class="sh-demo" style="box-shadow:var(--shadow-custom-lg)"></div><div class="sh-name">--shadow-custom-lg</div><div class="sh-use">popover · dropdown</div></div>
+      <div class="sh-card" data-copy="var(--shadow-custom-xl)"><div class="sh-demo" style="box-shadow:var(--shadow-custom-xl)"></div><div class="sh-name">--shadow-custom-xl</div><div class="sh-use">modal · floating card</div></div>
+    </div>
+  </main>
+</div>
+<script src="../docs.js"></script>
+</body>
+</html>

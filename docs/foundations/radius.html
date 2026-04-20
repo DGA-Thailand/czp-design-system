@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="th">
+<head><meta charset="utf-8"><title>มุมโค้ง · CZP Design System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../docs.css">
+<style>
+  .r-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 16px 0 24px; }
+  .r-card { border: 1px solid var(--stroke-neutral-lighter); padding: 20px; border-radius: 12px; background: var(--canvas-bright); cursor: pointer; text-align: center; }
+  .r-card:hover { background: var(--canvas-white); box-shadow: var(--shadow-custom); }
+  .r-demo { width: 64px; height: 64px; background: var(--primary-30-base); margin: 0 auto 12px; }
+  .r-name { font-family: ui-monospace, Menlo, monospace; font-size: 12px; color: var(--foreground-neutral-default); }
+  .r-val { font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: var(--foreground-neutral-lighter); margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="docs-layout">
+  <aside class="docs-sidebar" id="docs-sidebar"></aside>
+  <main class="docs-main">
+    <div class="docs-eyebrow">พื้นฐาน</div>
+    <h1 class="docs-title">มุมโค้ง</h1>
+    <p class="docs-lead">มุมโค้งของ CZP สร้างเอกลักษณ์ด้วยการใช้ <strong>ปุ่มทรงแคปซูล</strong> (full radius) ร่วมกับการ์ดมุมมน 12px</p>
+    <div class="placeholder">ตารางการใช้: ปุ่ม=full, การ์ด=xl, อินพุต=xl, modal=2xl, ไอคอน tile=md–lg</div>
+    <h2>สเกล</h2>
+    <div class="r-grid" id="r-list"></div>
+  </main>
+</div>
+<script src="../docs.js"></script>
+<script>
+  const scale = [
+    ['none','0px'],['xxs','2px'],['xs','4px'],['sm','6px'],
+    ['md','8px'],['lg','10px'],['xl','12px'],['2xl','16px'],
+    ['3xl','20px'],['4xl','24px'],['full','1000px'],
+  ];
+  document.getElementById('r-list').innerHTML = scale.map(([n,v]) => `
+    <div class="r-card" data-copy="var(--radius-${n})">
+      <div class="r-demo" style="border-radius:${v}"></div>
+      <div class="r-name">--radius-${n}</div>
+      <div class="r-val">${v}</div>
+    </div>`).join('');
+</script>
+</body>
+</html>

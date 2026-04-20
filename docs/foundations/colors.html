@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="th">
+<head><meta charset="utf-8"><title>สี · CZP Design System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../docs.css">
+<style>
+  .scale { display: grid; grid-template-columns: repeat(13, 1fr); gap: 4px; margin: 16px 0 24px; }
+  .scale .sw { aspect-ratio: 1 / 1.2; border-radius: 8px; position: relative; cursor: pointer; border: 1px solid rgba(0,0,0,.04); display: flex; align-items: flex-end; padding: 6px 8px; }
+  .scale .sw span { font-size: 10px; font-family: ui-monospace, Menlo, monospace; mix-blend-mode: difference; color: #fff; font-weight: 600; }
+  .scale.narrow { grid-template-columns: repeat(9, 1fr); }
+  .scale.alpha { grid-template-columns: repeat(7, 1fr); }
+  .sem-list { display: grid; grid-template-columns: 1fr; gap: 4px; margin: 12px 0 24px; }
+  .sem-row {
+    display: grid; grid-template-columns: 120px 1fr 1fr; gap: 12px;
+    padding: 8px 10px; border-radius: 6px; align-items: center; cursor: pointer;
+  }
+  .sem-row:hover { background: var(--canvas-bright); }
+  .sem-chip { width: 64px; height: 32px; border-radius: 6px; border: 1px solid var(--stroke-neutral-lightest); }
+  .sem-name { font-family: ui-monospace, Menlo, monospace; font-size: 12px; color: var(--foreground-neutral-default); }
+  .sem-ref { font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: var(--foreground-neutral-lighter); }
+</style>
+</head>
+<body>
+<div class="docs-layout">
+  <aside class="docs-sidebar" id="docs-sidebar"></aside>
+  <main class="docs-main">
+    <div class="docs-eyebrow">พื้นฐาน</div>
+    <h1 class="docs-title">สี</h1>
+    <p class="docs-lead">ระบบสีของ CZP ประกอบด้วย <strong>พาเล็ตต์ 7 ชุด</strong> (primary, secondary, neutral, danger, positive, warning, info) แต่ละชุดมีเฉดจาก 0 (เข้มสุด) ถึง 100 (ขาว) พร้อมชั้นความโปร่งใส (alpha) และ <strong>โทเคนเชิงความหมาย</strong> ที่ผูกกับการใช้งานจริงเช่น background, foreground, stroke</p>
+
+    <div class="placeholder">แนวคิดของโทนสี (ทำไมเป็นเขียวภาครัฐ) · หลักการ contrast WCAG · คู่สีที่อนุญาตและไม่อนุญาต</div>
+
+    <h2>Primary</h2>
+    <p>สีหลักของแบรนด์ — ใช้กับปุ่มหลัก สถานะพร้อมใช้งาน และการนำทางที่เลือกอยู่</p>
+    <div class="scale" id="scale-primary"></div>
+
+    <h2>Secondary</h2>
+    <p>สีรอง — ใช้กับองค์ประกอบสนับสนุน เช่น ปุ่มสำรอง แบดจ์ข้อมูล</p>
+    <div class="scale" id="scale-secondary"></div>
+
+    <h2>Neutral</h2>
+    <p>สีกลาง — โครงสร้างพื้นหลัง ข้อความ เส้นแบ่ง</p>
+    <div class="scale narrow" id="scale-neutral"></div>
+
+    <h2>Danger · Positive · Warning · Info</h2>
+    <p>สีเชิงสถานะ — สื่อความหมายชัดเจน ห้ามใช้สีอย่างเดียวสื่อสถานะ ต้องประกอบกับไอคอนหรือข้อความเสมอ (WCAG 1.4.1)</p>
+    <h3>Danger</h3><div class="scale" id="scale-danger"></div>
+    <h3>Positive</h3><div class="scale" id="scale-positive"></div>
+    <h3>Warning</h3><div class="scale" id="scale-warning"></div>
+    <h3>Info</h3><div class="scale" id="scale-info"></div>
+
+    <h2>Alpha overlay</h2>
+    <p>ชั้นความโปร่งใสสำหรับ scrim, overlay, และ hover/press state</p>
+    <div class="scale alpha" id="scale-alpha-dark"></div>
+    <div class="scale alpha" id="scale-alpha-light"></div>
+    <div class="scale alpha" id="scale-alpha-primary"></div>
+
+    <h2>Semantic — Background</h2>
+    <p>ใช้โทเคนเชิงความหมายแทน palette โดยตรง เพื่อให้ปรับธีมในอนาคตได้</p>
+    <div id="sem-bg" class="sem-list"></div>
+
+    <h2>Semantic — Foreground</h2>
+    <div id="sem-fg" class="sem-list"></div>
+
+    <h2>Semantic — Stroke</h2>
+    <div id="sem-stroke" class="sem-list"></div>
+
+    <h2>การใช้งาน</h2>
+    <div class="placeholder">ตัวอย่างคู่สี background/foreground ที่ผ่าน WCAG AA · do/don't</div>
+  </main>
+</div>
+<script src="../docs.js"></script>
+<script>
+  const steps = { base: ['0','10','20','30-base','40','50','60','70','80','90','95','99','100'],
+                  mainSec: ['0','10','20','30','40-main','50','60','70','80','90','95','99','100'],
+                  neutral: ['0','5','10','15','20','25','30','40','50','60','70','80','90','92','94','96','98','100'],
+                  simple: ['0','10','20','30','40','50','60','70','80','90','95','99','100'] };
+
+  function render(id, family, list, starKey) {
+    const host = document.getElementById(id);
+    const root = getComputedStyle(document.documentElement);
+    host.innerHTML = list.map(step => {
+      const cssName = `--${family}-${step}`;
+      const color = root.getPropertyValue(cssName).trim();
+      const isStar = step === starKey;
+      return `<div class="sw" data-copy="var(${cssName})" style="background:${color}" ${isStar ? 'data-star' : ''} title="${cssName}: ${color}"><span>${step}</span></div>`;
+    }).join('');
+  }
+  render('scale-primary', 'primary', steps.base, '30-base');
+  render('scale-secondary', 'secondary', steps.mainSec, '40-main');
+  const nHost = document.getElementById('scale-neutral');
+  nHost.innerHTML = steps.neutral.map(s => {
+    const v = getComputedStyle(document.documentElement).getPropertyValue(`--neutral-${s}`).trim();
+    return `<div class="sw" data-copy="var(--neutral-${s})" style="background:${v}" title="--neutral-${s}: ${v}"><span>${s}</span></div>`;
+  }).join('');
+  render('scale-danger','danger',steps.simple,'40');
+  render('scale-positive','positive',steps.simple,'50');
+  render('scale-warning','warning',steps.simple,'60');
+  render('scale-info','info',steps.simple,'50');
+
+  // Alpha
+  function renderAlpha(id, prefix) {
+    const list = ['05','10','20','40','60','80'];
+    const host = document.getElementById(id);
+    host.innerHTML = list.map(s => {
+      const name = `--a-${prefix}-a${s}`;
+      const v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+      return `<div class="sw" data-copy="var(${name})" style="background:${v}" title="${name}: ${v}"><span>${s}</span></div>`;
+    }).join('');
+  }
+  renderAlpha('scale-alpha-dark','dark');
+  renderAlpha('scale-alpha-light','light');
+  renderAlpha('scale-alpha-primary','primary');
+
+  // Semantic lists — read all --background-*, --foreground-*, --stroke-*
+  function allVars(prefix) {
+    const out = [];
+    for (const sheet of document.styleSheets) {
+      let rules; try { rules = sheet.cssRules; } catch (e) { continue; }
+      for (const r of rules) {
+        if (r.selectorText === ':root') {
+          for (let i = 0; i < r.style.length; i++) {
+            const n = r.style[i];
+            if (n.startsWith('--' + prefix + '-')) out.push({ name: n, value: r.style.getPropertyValue(n).trim() });
+          }
+        }
+      }
+    }
+    return out;
+  }
+  function renderSem(id, prefix) {
+    const host = document.getElementById(id);
+    const vars = allVars(prefix);
+    host.innerHTML = vars.map(v => {
+      const resolved = getComputedStyle(document.documentElement).getPropertyValue(v.name).trim();
+      return `<div class="sem-row" data-copy="var(${v.name})">
+        <div class="sem-chip" style="background:${resolved}"></div>
+        <div class="sem-name">${v.name}</div>
+        <div class="sem-ref">${v.value}</div>
+      </div>`;
+    }).join('');
+  }
+  renderSem('sem-bg','background');
+  renderSem('sem-fg','foreground');
+  renderSem('sem-stroke','stroke');
+</script>
+</body>
+</html>

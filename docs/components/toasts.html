@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="th">
+<head><meta charset="utf-8"><title>Toasts · CZP Design System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../docs.css">
+<style>
+  .stack { display: flex; flex-direction: column; gap: 10px; max-width: 520px; margin: 16px 0; }
+  .toast { display: flex; align-items: flex-start; gap: 12px; border-radius: 12px; padding: 12px 14px; font-size: 14px; border: 1px solid; }
+  .ic { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700; }
+  .title { font-weight: 600; font-size: 14px; line-height: 20px; }
+  .desc { font-size: 12px; opacity: .82; margin-top: 2px; }
+  .success { background: var(--positive-99); border-color: var(--positive-95); color: var(--positive-20-dark); }
+  .success .ic { background: var(--positive-95); color: var(--positive-20-dark); }
+  .info { background: var(--info-background); border-color: var(--primary-90); color: var(--primary-20); }
+  .info .ic { background: var(--primary-95); color: var(--primary-20); }
+  .warning { background: var(--warning-99); border-color: var(--warning-85); color: var(--warning-foreground-dark); }
+  .warning .ic { background: var(--warning-85); color: var(--warning-foreground-dark); }
+  .error { background: var(--danger-99); border-color: var(--danger-85); color: var(--danger-foreground-dark); }
+  .error .ic { background: var(--danger-95); color: var(--danger-foreground-dark); }
+</style>
+</head>
+<body>
+<div class="docs-layout">
+  <aside class="docs-sidebar" id="docs-sidebar"></aside>
+  <main class="docs-main">
+    <div class="docs-eyebrow">คอมโพเนนต์</div>
+    <h1 class="docs-title">Toasts</h1>
+    <p class="docs-lead">ข้อความแจ้งผลการกระทำชั่วคราว (Sonner) — ปรากฏมุมล่างขวาของหน้าจอ auto-dismiss 5 วินาที</p>
+    <div class="placeholder">คำเตือน: โทเค็นสี error-toast ในระบบยังใช้ <code>--foreground-warning-dark</code> อยู่ (ตามสเปกต้นฉบับ) — ทีมเดฟควรปรับให้ใช้ <code>--foreground-danger-dark</code> ในรอบถัดไป</div>
+
+    <h2>ชนิด</h2>
+    <div class="stack">
+      <div class="toast success"><div class="ic">✓</div><div><div class="title">บันทึกสำเร็จ</div><div class="desc">ข้อมูลของคุณถูกบันทึกเรียบร้อย</div></div></div>
+      <div class="toast info"><div class="ic">i</div><div><div class="title">ข้อมูลเพิ่มเติม</div><div class="desc">มีการอัปเดตใหม่สำหรับคุณ</div></div></div>
+      <div class="toast warning"><div class="ic">!</div><div><div class="title">คำเตือน</div><div class="desc">กรุณาตรวจสอบข้อมูลอีกครั้ง</div></div></div>
+      <div class="toast error"><div class="ic">✕</div><div><div class="title">เกิดข้อผิดพลาด</div><div class="desc">ไม่สามารถเชื่อมต่อระบบได้</div></div></div>
+    </div>
+
+    <h2>แนวทาง</h2>
+    <ul>
+      <li>ใช้ toast สำหรับ feedback ของการกระทำ ไม่ใช้สื่อสารเนื้อหาสำคัญที่ต้องอ่านซ้ำ</li>
+      <li>หัวข้อไม่เกิน 1 บรรทัด · คำอธิบายไม่เกิน 2 บรรทัด</li>
+      <li>กรณีผิดพลาดร้ายแรง ใช้ modal แทน toast</li>
+    </ul>
+  </main>
+</div>
+<script src="../docs.js"></script>
+</body>
+</html>

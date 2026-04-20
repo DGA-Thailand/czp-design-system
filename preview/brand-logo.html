@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { background: var(--canvas-bright); }
+  .brand { display: flex; align-items: center; gap: 16px; }
+  .mark {
+    width: 56px; height: 56px; border-radius: 14px;
+    background: #008858;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700; font-size: 22px;
+    box-shadow: 0 4px 6px -1px rgba(62,67,76,.08);
+  }
+  .wordmark { display: flex; flex-direction: column; gap: 2px; }
+  .title { font-weight: 700; font-size: 20px; color: #25272a; letter-spacing: -0.01em; }
+  .sub { font-size: 12px; color: #62676c; font-weight: 500; }
+  .row { display: flex; gap: 40px; align-items: center; margin-top: 8px; }
+  .dark-mark { background: #25272a; }
+  .outline-mark { background: #fff; border: 1.5px solid #008858; color: #008858; }
+</style></head><body>
+<div class="card">
+  <div class="row">
+    <div class="brand">
+      <div class="mark">CZ</div>
+      <div class="wordmark">
+        <div class="title">Citizen Portal</div>
+        <div class="sub">บริการออนไลน์สำหรับประชาชน</div>
+      </div>
+    </div>
+    <div class="brand">
+      <div class="mark dark-mark">CZ</div>
+      <div class="mark outline-mark">CZ</div>
+    </div>
+  </div>
+</div>
+</body></html>

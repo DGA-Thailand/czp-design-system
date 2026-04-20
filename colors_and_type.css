@@ -1,0 +1,429 @@
+/* CZP Design System — Colors, Typography, Spacing, Radius, Shadow Tokens
+ * Source: DESIGN.md (czp-web repo)
+ * Shared 1:1 with czp-mobile.
+ * Font: Anuphan (Thai + Latin) via Google Fonts.
+ */
+
+@font-face {
+  font-family: "Anuphan";
+  src: url("fonts/Anuphan-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Anuphan";
+  src: url("fonts/Anuphan-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Anuphan";
+  src: url("fonts/Anuphan-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Anuphan";
+  src: url("fonts/Anuphan-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Anuphan";
+  src: url("fonts/Anuphan-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Anuphan";
+  src: url("fonts/Anuphan-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Anuphan";
+  src: url("fonts/Anuphan-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ========== PRIMARY PALETTE ========== */
+  --primary-0: #00291b;
+  --primary-10: #003d28;
+  --primary-20: #006643;
+  --primary-30-base: #008858; /* ⭐ brand base */
+  --primary-40: #00b274;
+  --primary-50: #34c57e;
+  --primary-60: #5ed49a;
+  --primary-70: #5ed49a;
+  --primary-80: #8de3b8;
+  --primary-90: #adebd2;
+  --primary-95: #ebfaf4;
+  --primary-99: #fcfaff;
+  --primary-100: #ffffff;
+
+  /* ========== SECONDARY PALETTE ========== */
+  --secondary-0: #0e1c34;
+  --secondary-10: #142748;
+  --secondary-20: #1f3c70;
+  --secondary-30: #274b8c;
+  --secondary-40-main: #325fb4; /* ⭐ secondary main */
+  --secondary-50: #396bc8;
+  --secondary-60: #5f88d3;
+  --secondary-70: #87a5de;
+  --secondary-80: #c3d2ee;
+  --secondary-90: #dfe7f6;
+  --secondary-95: #eff3fa;
+  --secondary-99: #f7f9fd;
+  --secondary-100: #ffffff;
+
+  /* ========== NEUTRAL PALETTE ========== */
+  --neutral-0: #000000;
+  --neutral-5: #0b0b0c;
+  --neutral-10: #151618;
+  --neutral-15: #1d1f21;
+  --neutral-20: #25272a;
+  --neutral-25: #2a2d31;
+  --neutral-30: #2f3337;
+  --neutral-40: #373c41;
+  --neutral-50: #3d4349;
+  --neutral-60: #62676c;
+  --neutral-70: #8b9094;
+  --neutral-80: #b4b8bb;
+  --neutral-90: #dde0e2;
+  --neutral-92: #e4e6e8;
+  --neutral-94: #ebecee;
+  --neutral-96: #f1f3f3;
+  --neutral-98: #f8f9f9;
+  --neutral-100: #ffffff;
+
+  /* ========== DANGER ========== */
+  --danger-0: #55160c;
+  --danger-10: #7a271a;
+  --danger-20: #912018;
+  --danger-30: #b42318;
+  --danger-40: #d92d20; /* ⭐ */
+  --danger-50: #f04438;
+  --danger-60: #f97066;
+  --danger-70: #fda29b;
+  --danger-80: #fecdca;
+  --danger-90: #fee4e2;
+  --danger-95: #fef3f2;
+  --danger-99: #fffbfa;
+  --danger-100: #ffffff;
+
+  /* ========== POSITIVE ========== */
+  --positive-0: #053321;
+  --positive-10: #074d31;
+  --positive-20: #085d3a;
+  --positive-30: #067647;
+  --positive-40: #079455;
+  --positive-50: #17b26a; /* ⭐ */
+  --positive-60: #47cd89;
+  --positive-70: #75e0a7;
+  --positive-80: #a9efc5;
+  --positive-90: #dcfae6;
+  --positive-95: #ecfdf3;
+  --positive-99: #f6fef9;
+  --positive-100: #ffffff;
+
+  /* ========== WARNING ========== */
+  --warning-0: #4e1d09;
+  --warning-10: #7a2e0e;
+  --warning-20: #93370d;
+  --warning-30: #b54708;
+  --warning-40: #dc6803;
+  --warning-50: #f79009;
+  --warning-60: #fdb022; /* ⭐ */
+  --warning-70: #fec84b;
+  --warning-80: #fedf89;
+  --warning-90: #fef0c7;
+  --warning-95: #fffaeb;
+  --warning-99: #fffcf5;
+  --warning-100: #ffffff;
+
+  /* ========== INFO ========== */
+  --info-0: #062c41;
+  --info-10: #0b4a6f;
+  --info-20: #003c66;
+  --info-30: #026aa2;
+  --info-40: #0086c9;
+  --info-50: #0ba5ec; /* ⭐ */
+  --info-60: #36bffa;
+  --info-70: #7cd4fd;
+  --info-80: #b9e6fe;
+  --info-90: #addfff;
+  --info-95: #f0f9ff;
+  --info-99: #f5fbff;
+  --info-100: #ffffff;
+
+  /* ========== ALPHA / OVERLAY ========== */
+  --a-dark-a05: #1516180d;
+  --a-dark-a10: #1516181a;
+  --a-dark-a20: #15161833;
+  --a-dark-a40: #15161866;
+  --a-dark-a60: #15161899;
+  --a-dark-a80: #303030cc;
+  --a-light-a05: #ffffff0d;
+  --a-light-a10: #ffffff1a;
+  --a-light-a20: #ffffff33;
+  --a-light-a40: #ffffff66;
+  --a-light-a60: #ffffff99;
+  --a-light-a80: #ffffffcc;
+  --a-light-transparent: #ffffff00;
+  --a-primary-a05: #00b2740d;
+  --a-primary-a10: #00b2741a;
+  --a-primary-a20: #00b27433;
+  --a-primary-a40: #00b27466;
+  --a-primary-a60: #00b27499;
+  --a-primary-a80: #00b274cc;
+
+  /* ========== SEMANTIC — BACKGROUND ========== */
+  --background-primary-dark: var(--primary-30-base);
+  --background-primary-darker: var(--primary-20);
+  --background-primary-medium: var(--primary-40);
+  --background-primary-light: var(--primary-90);
+  --background-primary-lighter: var(--primary-95);
+  --background-secondary-dark: var(--secondary-30);
+  --background-secondary-medium: var(--secondary-40-main);
+  --background-secondary-light: var(--secondary-90);
+  --background-secondary-lighter: var(--secondary-95);
+  --background-neutral-lighter: var(--neutral-100);
+  --background-neutral-light: var(--neutral-98);
+  --background-neutral-medium: var(--neutral-96);
+  --background-neutral-dark: var(--neutral-94);
+  --background-neutral-darkest: var(--neutral-92);
+  --background-negative-dark: var(--danger-20);
+  --background-negative-medium: var(--danger-50);
+  --background-negative-light: var(--danger-95);
+  --background-negative-lighter: var(--danger-99);
+  --background-positive-dark: var(--positive-20);
+  --background-positive-medium: var(--positive-50);
+  --background-positive-light: var(--positive-95);
+  --background-positive-lighter: var(--positive-99);
+  --background-warning-dark: var(--warning-20);
+  --background-warning-medium: var(--warning-50);
+  --background-warning-light: var(--warning-95);
+  --background-warning-lighter: var(--warning-99);
+  --background-info-dark: var(--info-30);
+  --background-info-medium: var(--info-50);
+  --background-info-light: var(--info-95);
+  --background-info-lighter: var(--info-99);
+
+  /* ========== SEMANTIC — FOREGROUND ========== */
+  --foreground-neutral-default: var(--neutral-20);
+  --foreground-neutral-light: var(--neutral-40);
+  --foreground-neutral-lighter: var(--neutral-60);
+  --foreground-neutral-lightest: var(--neutral-80);
+  --foreground-primary-default: var(--primary-30-base);
+  --foreground-primary-dark: var(--primary-20);
+  --foreground-primary-light: var(--primary-60);
+  --foreground-negative-default: var(--danger-40);
+  --foreground-negative-dark: var(--danger-20);
+  --foreground-positive-default: var(--positive-40);
+  --foreground-positive-dark: var(--positive-20);
+  --foreground-warning-default: var(--warning-40);
+  --foreground-warning-dark: var(--warning-20);
+  --foreground-info-default: var(--info-50);
+  --foreground-secondary-default: var(--secondary-40-main);
+
+  /* ========== SEMANTIC — STROKE ========== */
+  --stroke-neutral-default: var(--neutral-90);
+  --stroke-neutral-lighter: var(--neutral-94);
+  --stroke-neutral-lightest: var(--neutral-96);
+  --stroke-primary-default: var(--primary-30-base);
+  --stroke-primary-lighter: var(--primary-60);
+  --stroke-secondary-default: var(--secondary-60);
+
+  /* ========== SEMANTIC — BUTTON ========== */
+  --button-background-primary-solid: var(--primary-30-base);
+  --button-foreground-primary-on-solid: var(--primary-100);
+  --button-background-negative-solid: var(--danger-40);
+  --button-background-secondary-subtle: var(--secondary-90);
+  --button-foreground-secondary-on-subtle: var(--secondary-40-main);
+  --button-background-disabled: var(--neutral-94);
+  --button-foreground-disabled: var(--neutral-80);
+  --button-background-fixed-solid: var(--neutral-100);
+  --button-stroke-primary: var(--primary-20);
+  --button-foreground-primary-on-transparent: var(--primary-20);
+  --button-stroke-fixed: var(--neutral-90);
+  --button-foreground-neutral-fixed: var(--neutral-40);
+
+  /* ========== SEMANTIC — CANVAS ========== */
+  --canvas-white: var(--neutral-100);
+  --canvas-bright: var(--neutral-98);
+  --canvas-default: var(--neutral-98);
+  --canvas-dim: var(--neutral-90);
+  --canvas-overlay: var(--a-dark-a60);
+
+  /* ========== SEMANTIC — INPUT ========== */
+  --input-background-default: var(--neutral-100);
+  --input-background-focused: var(--primary-100);
+  --input-background-error-focused: var(--danger-95);
+  --input-background-disabled: var(--neutral-94);
+  --input-input-default: var(--neutral-10);
+  --input-input-placeholder: var(--neutral-70);
+  --input-label-default: var(--neutral-25);
+  --input-label-focused: var(--primary-30-base);
+  --input-label-error: var(--danger-40);
+  --input-stroke-default: var(--neutral-90);
+  --input-stroke-focused: var(--primary-30-base);
+  --input-stroke-error: var(--danger-40);
+
+  /* ========== TYPOGRAPHY — SIZES ========== */
+  --font-family-base: "Anuphan", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --font-size-label-s: 11px;    --line-height-label-s: 16px;
+  --font-size-body-s: 12px;     --line-height-body-s: 16px;
+  --font-size-label-m: 12px;    --line-height-label-m: 18px;
+  --font-size-title-s: 14px;    --line-height-title-s: 20px;
+  --font-size-body-m: 14px;     --line-height-body-m: 20px;
+  --font-size-label-l: 14px;    --line-height-label-l: 21px;
+  --font-size-title-m: 16px;    --line-height-title-m: 24px;
+  --font-size-body-l: 16px;     --line-height-body-l: 24px;
+  --font-size-label-xl: 16px;   --line-height-label-xl: 24px;
+  --font-size-title-l: 18px;    --line-height-title-l: 26px;
+  --font-size-headline-s: 24px; --line-height-headline-s: 32px;
+  --font-size-headline-m: 28px; --line-height-headline-m: 36px;
+  --font-size-headline-l: 32px; --line-height-headline-l: 40px;
+  --font-size-display-s: 36px;  --line-height-display-s: 44px;
+  --font-size-display-m: 46px;  --line-height-display-m: 52px;
+  --font-size-display-l: 57px;  --line-height-display-l: 64px;
+
+  --font-weight-100: 100;
+  --font-weight-200: 200;
+  --font-weight-300: 300;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+  --font-weight-800: 800;
+  --font-weight-900: 900;
+
+  /* ========== SPACING ========== */
+  --spacing-none: 0px;
+  --spacing-xxs: 2px;
+  --spacing-xs: 4px;
+  --spacing-sm: 6px;
+  --spacing-md: 8px;
+  --spacing-lg: 12px;
+  --spacing-xl: 16px;
+  --spacing-2xl: 20px;
+  --spacing-3xl: 24px;
+  --spacing-4xl: 32px;
+  --spacing-5xl: 40px;
+  --spacing-6xl: 48px;
+  --spacing-7xl: 64px;
+  --spacing-8xl: 80px;
+  --spacing-9xl: 96px;
+  --spacing-10xl: 128px;
+  --spacing-11xl: 160px;
+
+  /* ========== RADIUS ========== */
+  --radius-none: 0px;
+  --radius-xxs: 2px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 20px;
+  --radius-4xl: 24px;
+  --radius-full: 1000px;
+
+  /* ========== SHADOWS ========== */
+  --shadow-custom: 0 4px 6px -1px rgba(62, 67, 76, 0.05);
+  --shadow-custom-lg: 0 10px 15px -3px rgba(62, 67, 76, 0.1), 0 4px 6px -2px rgba(62, 67, 76, 0.05);
+  --shadow-custom-xl: 0 20px 25px -5px rgba(62, 67, 76, 0.1), 0 10px 10px -5px rgba(62, 67, 76, 0.04);
+}
+
+/* ========== BASE ========== */
+html, body {
+  font-family: var(--font-family-base);
+  color: var(--foreground-neutral-default);
+  background: var(--canvas-default);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========== SEMANTIC TYPOGRAPHY CLASSES ========== */
+/* Matches typography.tsx component usage */
+.t-header {
+  font-size: var(--font-size-headline-s);
+  line-height: var(--line-height-headline-s);
+  font-weight: var(--font-weight-600);
+  color: var(--foreground-neutral-default);
+}
+@media (min-width: 1024px) {
+  .t-header {
+    font-size: var(--font-size-display-s);
+    line-height: var(--line-height-display-s);
+  }
+}
+
+.t-subheader {
+  font-size: var(--font-size-title-m);
+  line-height: var(--line-height-title-m);
+  font-weight: var(--font-weight-400);
+  color: var(--foreground-neutral-light);
+}
+@media (min-width: 1024px) {
+  .t-subheader {
+    font-size: var(--font-size-title-l);
+    line-height: var(--line-height-title-l);
+  }
+}
+
+.t-title {
+  font-size: var(--font-size-title-m);
+  line-height: var(--line-height-title-m);
+  font-weight: var(--font-weight-600);
+  color: var(--foreground-neutral-default);
+}
+@media (min-width: 1024px) {
+  .t-title {
+    font-size: var(--font-size-title-l);
+    line-height: var(--line-height-title-l);
+  }
+}
+
+.t-subtitle {
+  font-size: var(--font-size-body-m);
+  line-height: var(--line-height-body-m);
+  font-weight: var(--font-weight-400);
+  color: var(--foreground-neutral-light);
+}
+@media (min-width: 1024px) {
+  .t-subtitle {
+    font-size: var(--font-size-body-l);
+    line-height: var(--line-height-body-l);
+  }
+}
+
+.t-p {
+  font-size: var(--font-size-label-l);
+  line-height: var(--line-height-label-l);
+  font-weight: var(--font-weight-400);
+  color: var(--foreground-neutral-light);
+}
+.t-title-p {
+  font-size: var(--font-size-label-l);
+  line-height: var(--line-height-label-l);
+  font-weight: var(--font-weight-600);
+  color: var(--foreground-neutral-default);
+}
+.t-subtitle-p {
+  font-size: var(--font-size-label-l);
+  line-height: var(--line-height-label-l);
+  font-weight: var(--font-weight-400);
+  color: var(--foreground-neutral-lighter);
+}

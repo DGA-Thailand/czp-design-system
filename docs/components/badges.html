@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="th">
+<head><meta charset="utf-8"><title>Badges · CZP Design System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../docs.css">
+<style>
+  .badge { border-radius: 1000px; padding: 2px 10px; font-size: 12px; line-height: 18px; font-weight: 500; display: inline-flex; align-items: center; gap: 4px; border: 1px solid transparent; }
+  .b-default { background: var(--primary-30-base); color: #fff; }
+  .b-secondary { background: var(--secondary-95); color: var(--secondary-40-main); border-color: var(--secondary-85); }
+  .b-destructive { background: var(--danger-50-main); color: #fff; }
+  .b-success { background: var(--positive-50-main); color: #fff; }
+  .b-outline { background: transparent; color: var(--neutral-20); border-color: var(--stroke-neutral-default); }
+  .b-warning-soft { background: var(--warning-background); color: var(--warning-foreground-dark); border-color: var(--warning-50-main); }
+  .b-info-soft { background: var(--info-background); color: var(--info-foreground-main); border-color: var(--info-50-main); }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+</style>
+</head>
+<body>
+<div class="docs-layout">
+  <aside class="docs-sidebar" id="docs-sidebar"></aside>
+  <main class="docs-main">
+    <div class="docs-eyebrow">คอมโพเนนต์</div>
+    <h1 class="docs-title">Badges</h1>
+    <p class="docs-lead">ป้ายกำกับขนาดเล็กสำหรับบอกสถานะ หมวดหมู่ หรือการนับ ใช้รูปทรงแคปซูลเช่นเดียวกับปุ่ม</p>
+
+    <h2>ชนิด</h2>
+    <div class="demo-row">
+      <span class="badge b-default">3</span>
+      <span class="badge b-destructive">ด่วน</span>
+      <span class="badge b-success"><span class="dot"></span>ใช้งานได้</span>
+      <span class="badge b-secondary">รอดำเนินการ</span>
+      <span class="badge b-warning-soft">รอตรวจสอบ</span>
+      <span class="badge b-info-soft">ข้อมูลใหม่</span>
+      <span class="badge b-outline">เอกสาร</span>
+    </div>
+
+    <h2>แนวทาง</h2>
+    <ul>
+      <li>ใช้สี <strong>soft</strong> (warning/info-soft) เมื่อมีหลายป้ายในแถวเดียวกัน เพื่อลดความวุ่นวายทางสายตา</li>
+      <li>เพิ่ม <code>dot</code> สถานะเมื่อต้องการเน้น "กำลังเกิดขึ้น" (live, online)</li>
+      <li>ข้อความในป้ายควรสั้นไม่เกิน 2 คำ</li>
+    </ul>
+
+    <h2>โค้ดตัวอย่าง</h2>
+    <div class="code" data-copy='<Badge variant="warningSoft">รอตรวจสอบ</Badge>'>&lt;Badge variant="warningSoft"&gt;รอตรวจสอบ&lt;/Badge&gt;</div>
+  </main>
+</div>
+<script src="../docs.js"></script>
+</body>
+</html>

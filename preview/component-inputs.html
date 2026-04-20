@@ -1,0 +1,47 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { background: var(--canvas-bright); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .label { font-size: 12px; color: #2a2d31; font-weight: 500; }
+  .input {
+    border: 1px solid #dde0e2;
+    border-radius: 12px;
+    padding: 12px 14px;
+    background: #fff;
+    color: #151618;
+    font-size: 16px;
+    min-height: 48px;
+    box-sizing: border-box;
+    font-family: var(--font-family-base);
+  }
+  .input::placeholder { color: #8b9094; }
+  .input.focused { border-color: #008858; outline: 2px solid #ebfaf4; }
+  .input.focused + .lbl { color: #008858; }
+  .input.error { border-color: #d92d20; background: #fef3f2; }
+  .help-err { color: #d92d20; font-size: 12px; }
+  .input.disabled { background: #ebecee; color: #8b9094; }
+</style></head><body>
+<div class="card">
+  <div class="grid">
+    <div class="field">
+      <label class="label">อีเมล</label>
+      <input class="input focused" value="citizen@example.co.th">
+    </div>
+    <div class="field">
+      <label class="label" style="color:#d92d20">รหัสผ่าน</label>
+      <input class="input error" type="password" value="••••">
+      <div class="help-err">รหัสผ่านสั้นเกินไป</div>
+    </div>
+    <div class="field">
+      <label class="label">ชื่อ-นามสกุล</label>
+      <input class="input" placeholder="กรุณากรอกชื่อ">
+    </div>
+    <div class="field">
+      <label class="label">เลขประจำตัว</label>
+      <input class="input disabled" value="1-2345-67890-12-3" disabled>
+    </div>
+  </div>
+</div>
+</body></html>

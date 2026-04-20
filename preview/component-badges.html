@@ -1,0 +1,37 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { background: var(--canvas-bright); }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .badge {
+    border-radius: 1000px;
+    border: 1px solid transparent;
+    padding: 2px 10px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .b-default { background: #008858; color: #fff; }
+  .b-secondary { background: #eff3fa; color: #325fb4; border-color: #c3d2ee; }
+  .b-destructive { background: #d92d20; color: #fff; }
+  .b-success { background: #17b26a; color: #fff; }
+  .b-outline { background: transparent; color: #25272a; border-color: #dde0e2; }
+  .b-warning-soft { background: #fef0c7; color: #93370d; border-color: #fedf89; }
+  .b-info-soft { background: #f0f9ff; color: #026aa2; border-color: #b9e6fe; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+</style></head><body>
+<div class="card">
+  <div class="row">
+    <span class="badge b-default">3</span>
+    <span class="badge b-destructive">ด่วน</span>
+    <span class="badge b-success"><span class="dot"></span>ใช้งานได้</span>
+    <span class="badge b-secondary">รอดำเนินการ</span>
+    <span class="badge b-warning-soft">รอตรวจสอบ</span>
+    <span class="badge b-info-soft">ข้อมูลใหม่</span>
+    <span class="badge b-outline">เอกสาร</span>
+  </div>
+</div>
+</body></html>

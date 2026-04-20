@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8"><title>วิธีเริ่มใช้งาน · CZP Design System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+<div class="docs-layout">
+  <aside class="docs-sidebar" id="docs-sidebar"></aside>
+  <main class="docs-main">
+    <div class="docs-eyebrow">เริ่มต้น</div>
+    <h1 class="docs-title">วิธีเริ่มใช้งาน</h1>
+    <p class="docs-lead">แนะนำการติดตั้งและนำระบบการออกแบบไปใช้กับโปรเจกต์ของคุณ</p>
+
+    <h2>1. ติดตั้งโทเคน</h2>
+    <p>คัดลอกไฟล์ <code>colors_and_type.css</code> และโฟลเดอร์ <code>fonts/</code> ไปยังโปรเจกต์ของคุณ จากนั้น import ที่รากของแอป</p>
+<pre><code>/* app.css หรือ globals.css */
+@import "./tokens/colors_and_type.css";</code></pre>
+
+    <h2>2. ใช้ตัวแปร CSS</h2>
+<pre><code>.card {
+  background: var(--canvas-white);
+  border: 1px solid var(--stroke-neutral-lighter);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-custom);
+}</code></pre>
+
+    <h2>3. ใช้ JSON tokens (สำหรับ Figma / Tailwind / iOS / Android)</h2>
+    <p>ไฟล์ <code>tokens.json</code> สามารถแปลงผ่าน Style Dictionary หรือปลั๊กอิน Figma Tokens ได้โดยตรง</p>
+
+    <div class="placeholder">ขั้นตอนการตั้งค่า Style Dictionary พร้อมตัวอย่างไฟล์ config</div>
+
+    <h2>4. React components (เฉพาะ web)</h2>
+    <p>ดูไฟล์ต้นฉบับใน <a href="../resources/downloads.html">หน้าดาวน์โหลด</a> — เป็น reference implementation ด้วย React + JSX ไม่ผูกกับ framework ใด</p>
+
+    <div class="placeholder">แนวทางการนำ components ไปใช้ใน Next.js / Vite / Remix</div>
+  </main>
+</div>
+<script src="docs.js"></script>
+</body>
+</html>

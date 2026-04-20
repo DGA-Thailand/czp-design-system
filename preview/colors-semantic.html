@@ -1,0 +1,55 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .group-label { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--foreground-neutral-lighter); margin-bottom: 8px; }
+  .rowx { display: flex; gap: 6px; align-items: flex-end; }
+  .s { flex:1; display:flex; flex-direction:column; gap:4px; }
+  .sw { height: 38px; border-radius: 6px; border: 1px solid var(--stroke-neutral-lighter); }
+  .hex { font-family: ui-monospace, Menlo, monospace; font-size: 9px; color: var(--foreground-neutral-lighter); text-align: center; }
+</style></head><body>
+<div class="card">
+  <div class="grid">
+    <div>
+      <div class="group-label" style="color:#d92d20">Danger</div>
+      <div class="rowx">
+        <div class="s"><div class="sw" style="background:#912018"></div><div class="hex">20</div></div>
+        <div class="s"><div class="sw" style="background:#d92d20; outline: 2px solid #d92d20; outline-offset: 2px"></div><div class="hex">40★</div></div>
+        <div class="s"><div class="sw" style="background:#f04438"></div><div class="hex">50</div></div>
+        <div class="s"><div class="sw" style="background:#fecdca"></div><div class="hex">80</div></div>
+        <div class="s"><div class="sw" style="background:#fef3f2"></div><div class="hex">95</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="group-label" style="color:#079455">Positive</div>
+      <div class="rowx">
+        <div class="s"><div class="sw" style="background:#085d3a"></div><div class="hex">20</div></div>
+        <div class="s"><div class="sw" style="background:#079455"></div><div class="hex">40</div></div>
+        <div class="s"><div class="sw" style="background:#17b26a; outline: 2px solid #17b26a; outline-offset: 2px"></div><div class="hex">50★</div></div>
+        <div class="s"><div class="sw" style="background:#a9efc5"></div><div class="hex">80</div></div>
+        <div class="s"><div class="sw" style="background:#ecfdf3"></div><div class="hex">95</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="group-label" style="color:#dc6803">Warning</div>
+      <div class="rowx">
+        <div class="s"><div class="sw" style="background:#93370d"></div><div class="hex">20</div></div>
+        <div class="s"><div class="sw" style="background:#dc6803"></div><div class="hex">40</div></div>
+        <div class="s"><div class="sw" style="background:#f79009"></div><div class="hex">50</div></div>
+        <div class="s"><div class="sw" style="background:#fdb022; outline: 2px solid #fdb022; outline-offset: 2px"></div><div class="hex">60★</div></div>
+        <div class="s"><div class="sw" style="background:#fffaeb"></div><div class="hex">95</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="group-label" style="color:#0ba5ec">Info</div>
+      <div class="rowx">
+        <div class="s"><div class="sw" style="background:#026aa2"></div><div class="hex">30</div></div>
+        <div class="s"><div class="sw" style="background:#0086c9"></div><div class="hex">40</div></div>
+        <div class="s"><div class="sw" style="background:#0ba5ec; outline: 2px solid #0ba5ec; outline-offset: 2px"></div><div class="hex">50★</div></div>
+        <div class="s"><div class="sw" style="background:#b9e6fe"></div><div class="hex">80</div></div>
+        <div class="s"><div class="sw" style="background:#f0f9ff"></div><div class="hex">95</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

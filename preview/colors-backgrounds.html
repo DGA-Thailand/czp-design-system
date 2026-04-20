@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; }
+  .sem { display: grid; grid-template-columns: 64px 1fr 90px; gap: 10px; align-items: center; }
+  .chip { height: 32px; border-radius: 8px; border: 1px solid var(--stroke-neutral-lighter); }
+  .lbl { font-size: 11px; color: var(--foreground-neutral-default); font-weight: 500; }
+  .val { font-family: ui-monospace, Menlo, monospace; font-size: 10px; color: var(--foreground-neutral-lighter); text-align: right; }
+</style></head><body>
+<div class="card">
+  <div class="grid">
+    <div class="sem"><div class="chip" style="background:#ffffff"></div><div class="lbl">canvas-white</div><div class="val">#ffffff</div></div>
+    <div class="sem"><div class="chip" style="background:#f8f9f9"></div><div class="lbl">canvas-default</div><div class="val">#f8f9f9</div></div>
+    <div class="sem"><div class="chip" style="background:#008858"></div><div class="lbl">bg-primary-dark</div><div class="val">#008858</div></div>
+    <div class="sem"><div class="chip" style="background:#ebfaf4"></div><div class="lbl">bg-primary-lighter</div><div class="val">#ebfaf4</div></div>
+    <div class="sem"><div class="chip" style="background:#325fb4"></div><div class="lbl">bg-secondary-medium</div><div class="val">#325fb4</div></div>
+    <div class="sem"><div class="chip" style="background:#eff3fa"></div><div class="lbl">bg-secondary-lighter</div><div class="val">#eff3fa</div></div>
+    <div class="sem"><div class="chip" style="background:#17b26a"></div><div class="lbl">bg-positive-medium</div><div class="val">#17b26a</div></div>
+    <div class="sem"><div class="chip" style="background:#ecfdf3"></div><div class="lbl">bg-positive-light</div><div class="val">#ecfdf3</div></div>
+    <div class="sem"><div class="chip" style="background:#d92d20"></div><div class="lbl">bg-negative-medium*</div><div class="val">#d92d20</div></div>
+    <div class="sem"><div class="chip" style="background:#fef3f2"></div><div class="lbl">bg-negative-light</div><div class="val">#fef3f2</div></div>
+    <div class="sem"><div class="chip" style="background:#fdb022"></div><div class="lbl">bg-warning-med</div><div class="val">#fdb022</div></div>
+    <div class="sem"><div class="chip" style="background:#f0f9ff"></div><div class="lbl">bg-info-light</div><div class="val">#f0f9ff</div></div>
+  </div>
+</div>
+</body></html>

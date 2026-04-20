@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="th">
+<head><meta charset="utf-8"><title>Buttons · CZP Design System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../docs.css">
+<style>
+  .btn { border-radius: 1000px; font-weight: 500; font-size: 16px; padding: 0 16px; min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: none; cursor: pointer; font-family: inherit; }
+  .b-default { background: var(--primary-30-base); color: #fff; }
+  .b-destructive { background: var(--danger-50-main); color: #fff; }
+  .b-outline { background: transparent; color: var(--primary-20); border: 1px solid var(--primary-20); }
+  .b-secondary { background: var(--secondary-90); color: var(--secondary-40-main); }
+  .b-tertiary { background: var(--neutral-96); color: var(--neutral-20); }
+  .b-ghost { background: transparent; color: var(--neutral-20); }
+  .b-link { background: transparent; color: var(--primary-30-base); text-decoration: underline; min-height: auto; padding: 0 4px; }
+  .b-disabled { background: var(--neutral-94); color: var(--neutral-75); cursor: not-allowed; }
+</style>
+</head>
+<body>
+<div class="docs-layout">
+  <aside class="docs-sidebar" id="docs-sidebar"></aside>
+  <main class="docs-main">
+    <div class="docs-eyebrow">คอมโพเนนต์</div>
+    <h1 class="docs-title">Buttons</h1>
+    <p class="docs-lead">ปุ่มของ CZP เป็นทรง <strong>แคปซูล</strong> (border-radius: 1000px) สูงอย่างน้อย 48px เพื่อให้แตะได้สะดวกบนมือถือ และสื่ออารมณ์ที่เป็นมิตร มั่นคง</p>
+
+    <h2>ชนิด</h2>
+    <div class="demo-row">
+      <button class="btn b-default">ยืนยัน</button>
+      <button class="btn b-destructive">ลบ</button>
+      <button class="btn b-outline">ยกเลิก</button>
+      <button class="btn b-secondary">สำรอง</button>
+      <button class="btn b-tertiary">ข้าม</button>
+      <button class="btn b-ghost">Ghost</button>
+      <button class="btn b-link">ลิงก์</button>
+      <button class="btn b-disabled" disabled>ปิดใช้งาน</button>
+    </div>
+
+    <h2>แนวทาง</h2>
+    <ul>
+      <li>ใช้ <code>default</code> เฉพาะ primary action หลักของหน้าจอ หลีกเลี่ยงมี default สองปุ่มในพื้นที่เดียวกัน</li>
+      <li>ใช้ <code>destructive</code> เฉพาะการกระทำที่ย้อนกลับไม่ได้ (ลบ ยกเลิกถาวร) และควรมี modal ยืนยันเสมอ</li>
+      <li>ใช้ <code>outline</code> คู่กับ default เพื่อให้ตัวเลือกที่สอง (เช่น "ยกเลิก") ไม่ดึงความสนใจเกินไป</li>
+      <li>ข้อความบนปุ่มควรเป็นคำกริยาสั้น ๆ เช่น "ยืนยัน", "บันทึก", "ดำเนินการต่อ" ไม่ใช่ "OK" หรือ "คลิกที่นี่"</li>
+    </ul>
+
+    <h2>โค้ดตัวอย่าง</h2>
+    <div class="code" data-copy='<Button variant="default">ยืนยัน</Button>'>&lt;Button variant="default"&gt;ยืนยัน&lt;/Button&gt;</div>
+  </main>
+</div>
+<script src="../docs.js"></script>
+</body>
+</html>

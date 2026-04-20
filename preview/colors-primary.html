@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  .row { display:flex; gap: 12px; align-items:flex-end; }
+  .s { flex:1; display:flex; flex-direction:column; gap:6px; }
+  .sw { height: 64px; border-radius: 10px; border: 1px solid var(--stroke-neutral-lighter); }
+  .star { position:absolute; top:6px; right:8px; font-size: 13px; color: white; text-shadow: 0 1px 2px rgba(0,0,0,.3); }
+  .sw-wrap { position:relative; }
+  .name { font-size: 11px; font-weight: 600; color: var(--foreground-neutral-default); }
+  .hex { font-family: ui-monospace, Menlo, monospace; font-size: 10px; color: var(--foreground-neutral-lighter); }
+</style></head><body>
+<div class="card">
+  <div class="row">
+    <div class="s"><div class="sw-wrap"><div class="sw" style="background:#00291b"></div></div><div class="name">0</div><div class="hex">#00291b</div></div>
+    <div class="s"><div class="sw-wrap"><div class="sw" style="background:#003d28"></div></div><div class="name">10</div><div class="hex">#003d28</div></div>
+    <div class="s"><div class="sw-wrap"><div class="sw" style="background:#006643"></div></div><div class="name">20</div><div class="hex">#006643</div></div>
+    <div class="s"><div class="sw-wrap"><div class="sw" style="background:#008858"><div class="star">★</div></div></div><div class="name">30</div><div class="hex">#008858</div></div>
+    <div class="s"><div class="sw-wrap"><div class="sw" style="background:#00b274"></div></div><div class="name">40</div><div class="hex">#00b274</div></div>
+    <div class="s"><div class="sw-wrap"><div class="sw" style="background:#34c57e"></div></div><div class="name">50</div><div class="hex">#34c57e</div></div>
+    <div class="s"><div class="sw-wrap"><div class="sw" style="background:#5ed49a"></div></div><div class="name">60</div><div class="hex">#5ed49a</div></div>
+    <div class="s"><div class="sw-wrap"><div class="sw" style="background:#8de3b8"></div></div><div class="name">80</div><div class="hex">#8de3b8</div></div>
+    <div class="s"><div class="sw-wrap"><div class="sw" style="background:#adebd2"></div></div><div class="name">90</div><div class="hex">#adebd2</div></div>
+    <div class="s"><div class="sw-wrap"><div class="sw" style="background:#ebfaf4"></div></div><div class="name">95</div><div class="hex">#ebfaf4</div></div>
+  </div>
+</div>
+</body></html>

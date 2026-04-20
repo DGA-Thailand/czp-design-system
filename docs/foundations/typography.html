@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="th">
+<head><meta charset="utf-8"><title>ตัวอักษร · CZP Design System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../docs.css">
+<style>
+  .type-row { display: grid; grid-template-columns: 160px 1fr 140px; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--stroke-neutral-lighter); align-items: baseline; }
+  .type-row:last-child { border-bottom: none; }
+  .type-meta { font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: var(--foreground-neutral-lighter); }
+  .type-tok { font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: var(--foreground-primary-dark); background: var(--background-primary-lighter); padding: 2px 6px; border-radius: 4px; cursor: pointer; justify-self: end; align-self: center; }
+  .type-sample { color: var(--foreground-neutral-default); }
+  .weights { display: grid; grid-template-columns: repeat(7, 1fr); gap: 16px; margin: 16px 0 24px; }
+  .weight-col { text-align: center; }
+  .weight-sample { font-size: 44px; line-height: 1; color: var(--foreground-neutral-default); }
+  .weight-name { font-size: 12px; color: var(--foreground-neutral-light); margin-top: 8px; font-weight: 500; }
+  .weight-num { font-family: ui-monospace, Menlo, monospace; font-size: 10px; color: var(--foreground-neutral-lighter); }
+</style>
+</head>
+<body>
+<div class="docs-layout">
+  <aside class="docs-sidebar" id="docs-sidebar"></aside>
+  <main class="docs-main">
+    <div class="docs-eyebrow">พื้นฐาน</div>
+    <h1 class="docs-title">ตัวอักษร</h1>
+    <p class="docs-lead">ใช้ฟอนต์ <strong>Anuphan</strong> (ไทย + ละติน) ที่ออกแบบให้อ่านง่ายบนหน้าจอ รองรับน้ำหนักตั้งแต่ 100 ถึง 700 และสเกลแบบ Material-inspired 16 ระดับ</p>
+
+    <div class="placeholder">เหตุผลในการเลือก Anuphan · หลักการจัดลำดับชั้น · แนวทางการใช้กับภาษาอังกฤษ</div>
+
+    <h2>น้ำหนัก (Weights)</h2>
+    <div class="weights">
+      <div class="weight-col"><div class="weight-sample" style="font-weight:100">ก Aa</div><div class="weight-name">Thin</div><div class="weight-num">100</div></div>
+      <div class="weight-col"><div class="weight-sample" style="font-weight:200">ก Aa</div><div class="weight-name">ExtraLight</div><div class="weight-num">200</div></div>
+      <div class="weight-col"><div class="weight-sample" style="font-weight:300">ก Aa</div><div class="weight-name">Light</div><div class="weight-num">300</div></div>
+      <div class="weight-col"><div class="weight-sample" style="font-weight:400">ก Aa</div><div class="weight-name">Regular</div><div class="weight-num">400</div></div>
+      <div class="weight-col"><div class="weight-sample" style="font-weight:500">ก Aa</div><div class="weight-name">Medium</div><div class="weight-num">500</div></div>
+      <div class="weight-col"><div class="weight-sample" style="font-weight:600">ก Aa</div><div class="weight-name">SemiBold</div><div class="weight-num">600</div></div>
+      <div class="weight-col"><div class="weight-sample" style="font-weight:700">ก Aa</div><div class="weight-name">Bold</div><div class="weight-num">700</div></div>
+    </div>
+
+    <h2>Display</h2>
+    <div class="type-row"><div class="type-meta">Display L</div><div class="type-sample" style="font-size:57px;line-height:64px;font-weight:600">พอร์ทัลประชาชน</div><div class="type-tok" data-copy="var(--font-size-display-l)">57 / 64 / 600</div></div>
+    <div class="type-row"><div class="type-meta">Display M</div><div class="type-sample" style="font-size:46px;line-height:52px;font-weight:600">พอร์ทัลประชาชน</div><div class="type-tok" data-copy="var(--font-size-display-m)">46 / 52 / 600</div></div>
+    <div class="type-row"><div class="type-meta">Display S</div><div class="type-sample" style="font-size:36px;line-height:44px;font-weight:600">พอร์ทัลประชาชน</div><div class="type-tok" data-copy="var(--font-size-display-s)">36 / 44 / 600</div></div>
+
+    <h2>Headline</h2>
+    <div class="type-row"><div class="type-meta">Headline L</div><div class="type-sample" style="font-size:32px;line-height:40px;font-weight:600">บริการยอดนิยม</div><div class="type-tok" data-copy="var(--font-size-headline-l)">32 / 40 / 600</div></div>
+    <div class="type-row"><div class="type-meta">Headline M</div><div class="type-sample" style="font-size:28px;line-height:36px;font-weight:600">บริการยอดนิยม</div><div class="type-tok" data-copy="var(--font-size-headline-m)">28 / 36 / 600</div></div>
+    <div class="type-row"><div class="type-meta">Headline S</div><div class="type-sample" style="font-size:24px;line-height:32px;font-weight:600">บริการยอดนิยม</div><div class="type-tok" data-copy="var(--font-size-headline-s)">24 / 32 / 600</div></div>
+
+    <h2>Title</h2>
+    <div class="type-row"><div class="type-meta">Title L</div><div class="type-sample" style="font-size:18px;line-height:26px;font-weight:600">ยื่นคำร้องออนไลน์</div><div class="type-tok" data-copy="var(--font-size-title-l)">18 / 26 / 600</div></div>
+    <div class="type-row"><div class="type-meta">Title M</div><div class="type-sample" style="font-size:16px;line-height:24px;font-weight:600">ยื่นคำร้องออนไลน์</div><div class="type-tok" data-copy="var(--font-size-title-m)">16 / 24 / 600</div></div>
+    <div class="type-row"><div class="type-meta">Title S</div><div class="type-sample" style="font-size:14px;line-height:20px;font-weight:600">ยื่นคำร้องออนไลน์</div><div class="type-tok" data-copy="var(--font-size-title-s)">14 / 20 / 600</div></div>
+
+    <h2>Body</h2>
+    <div class="type-row"><div class="type-meta">Body L</div><div class="type-sample" style="font-size:16px;line-height:24px">ท่านสามารถยื่นคำร้องและติดตามสถานะได้ตลอด 24 ชั่วโมง</div><div class="type-tok" data-copy="var(--font-size-body-l)">16 / 24 / 400</div></div>
+    <div class="type-row"><div class="type-meta">Body M</div><div class="type-sample" style="font-size:14px;line-height:20px">ท่านสามารถยื่นคำร้องและติดตามสถานะได้ตลอด 24 ชั่วโมง</div><div class="type-tok" data-copy="var(--font-size-body-m)">14 / 20 / 400</div></div>
+    <div class="type-row"><div class="type-meta">Body S</div><div class="type-sample" style="font-size:12px;line-height:16px">ท่านสามารถยื่นคำร้องและติดตามสถานะได้ตลอด 24 ชั่วโมง</div><div class="type-tok" data-copy="var(--font-size-body-s)">12 / 16 / 400</div></div>
+
+    <h2>Label</h2>
+    <div class="type-row"><div class="type-meta">Label XL</div><div class="type-sample" style="font-size:16px;line-height:24px;font-weight:500">ยืนยัน</div><div class="type-tok" data-copy="var(--font-size-label-xl)">16 / 24 / 500</div></div>
+    <div class="type-row"><div class="type-meta">Label L</div><div class="type-sample" style="font-size:14px;line-height:21px;font-weight:500">ยืนยัน</div><div class="type-tok" data-copy="var(--font-size-label-l)">14 / 21 / 500</div></div>
+    <div class="type-row"><div class="type-meta">Label M</div><div class="type-sample" style="font-size:12px;line-height:18px;font-weight:500">ยืนยัน</div><div class="type-tok" data-copy="var(--font-size-label-m)">12 / 18 / 500</div></div>
+    <div class="type-row"><div class="type-meta">Label S</div><div class="type-sample" style="font-size:11px;line-height:16px;font-weight:500">ยืนยัน</div><div class="type-tok" data-copy="var(--font-size-label-s)">11 / 16 / 500</div></div>
+
+    <h2>คลาสเชิงความหมาย</h2>
+    <p>ใช้คลาส <code>.t-*</code> เพื่อให้ขนาดปรับตามขนาดหน้าจอโดยอัตโนมัติ (responsive)</p>
+<pre><code>&lt;h1 class="t-header"&gt;ชื่อหน้า&lt;/h1&gt;
+&lt;p class="t-subheader"&gt;คำโปรยใต้หัวข้อ&lt;/p&gt;
+&lt;h3 class="t-title"&gt;หัวข้อย่อย&lt;/h3&gt;
+&lt;p class="t-p"&gt;เนื้อหาทั่วไป&lt;/p&gt;</code></pre>
+  </main>
+</div>
+<script src="../docs.js"></script>
+</body>
+</html>
