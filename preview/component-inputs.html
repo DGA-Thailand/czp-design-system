@@ -4,24 +4,30 @@
   body { background: var(--canvas-bright); }
   .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .field { display: flex; flex-direction: column; gap: 6px; }
-  .label { font-size: 12px; color: #2a2d31; font-weight: 500; }
+  .label { font-size: 12px; color: var(--input-label-default); font-weight: 500; }
   .input {
-    border: 1px solid #dde0e2;
+    border: 1px solid var(--input-stroke-default);
     border-radius: 12px;
     padding: 12px 14px;
-    background: #fff;
-    color: #151618;
+    background: var(--input-background-default);
+    color: var(--input-input-default);
     font-size: 16px;
     min-height: 48px;
     box-sizing: border-box;
     font-family: var(--font-family-base);
   }
-  .input::placeholder { color: #8b9094; }
-  .input.focused { border-color: #008858; outline: 2px solid #ebfaf4; }
-  .input.focused + .lbl { color: #008858; }
-  .input.error { border-color: #d92d20; background: #fef3f2; }
-  .help-err { color: #d92d20; font-size: 12px; }
-  .input.disabled { background: #ebecee; color: #8b9094; }
+  .input::placeholder { color: var(--input-input-placeholder); }
+  .input.focused { border-color: var(--input-stroke-focused); outline: 2px solid var(--background-primary-lighter); }
+  .input.error { border-color: var(--input-stroke-error); background: var(--input-background-error-focused); }
+  .help-err { color: var(--foreground-negative-default); font-size: 12px; }
+  .input.disabled, .input:disabled { background: var(--input-background-disabled); color: var(--input-input-placeholder); cursor: not-allowed; }
+  /* Real focus states */
+  .input:focus { border-color: var(--input-stroke-focused); outline: 2px solid var(--background-primary-lighter); background: var(--input-background-focused); }
+  .input.error:focus { border-color: var(--input-stroke-error); outline: 2px solid var(--background-negative-light); background: var(--input-background-error-focused); }
+  .input.disabled:focus, .input:disabled:focus { outline: none; }
+  .field:focus-within .label { color: var(--input-label-focused); }
+  .field:has(.error) .label { color: var(--input-label-error); }
+  .field:has(.error):focus-within .label { color: var(--input-label-error); }
 </style></head><body>
 <div class="card">
   <div class="grid">
@@ -30,7 +36,7 @@
       <input class="input focused" value="citizen@example.co.th">
     </div>
     <div class="field">
-      <label class="label" style="color:#d92d20">รหัสผ่าน</label>
+      <label class="label">รหัสผ่าน</label>
       <input class="input error" type="password" value="••••">
       <div class="help-err">รหัสผ่านสั้นเกินไป</div>
     </div>

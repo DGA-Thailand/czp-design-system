@@ -4,11 +4,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../docs.css">
 <style>
-  .wrap { background: #fff; border: 1px solid var(--stroke-neutral-lighter); border-radius: 12px; padding: 8px; max-width: 320px; box-shadow: var(--shadow-custom-lg); margin: 16px 0; }
-  .item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 8px; font-size: 14px; color: var(--foreground-neutral-dark); cursor: pointer; }
+  .wrap { background: var(--canvas-white); border: 1px solid var(--stroke-neutral-lighter); border-radius: 12px; padding: 8px; max-width: 320px; box-shadow: var(--shadow-custom-lg); margin: 16px 0; }
+  .item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 8px; font-size: 14px; color: var(--foreground-neutral-default); cursor: pointer; }
   .item:hover, .item.active { background: var(--canvas-bright); }
-  .item.danger { color: var(--danger-50-main); }
-  .ic { width: 18px; height: 18px; border-radius: 4px; background: var(--neutral-94); }
+  .item.danger { color: var(--foreground-negative-default); }
+  .ic { width: 18px; height: 18px; border-radius: 4px; background: var(--background-neutral-dark); }
   .item.danger .ic { background: var(--danger-95); }
   .sep { height: 1px; background: var(--stroke-neutral-lighter); margin: 4px 0; }
   .sc { margin-left: auto; font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: var(--foreground-neutral-lighter); }
@@ -32,7 +32,7 @@
     <h2>แนวทาง</h2>
     <ul>
       <li>จัดกลุ่มรายการด้วย separator — ไม่เกิน 3 กลุ่ม/เมนู</li>
-      <li>รายการ destructive ต้องอยู่ล่างสุด และสีแดง (var(--danger-50-main))</li>
+      <li>รายการ destructive ต้องอยู่ล่างสุด และสีแดง (var(--foreground-negative-default))</li>
       <li>แสดง keyboard shortcut ชิดขวาด้วย monospace</li>
     </ul>
   </main>

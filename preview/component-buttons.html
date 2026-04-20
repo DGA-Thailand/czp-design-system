@@ -18,14 +18,14 @@
     transition: all .15s;
     white-space: nowrap;
   }
-  .default { background: #008858; color: #fff; }
-  .destructive { background: #d92d20; color: #fff; }
-  .outline { background: transparent; color: #006643; border: 1px solid #006643; }
-  .secondary { background: #dfe7f6; color: #325fb4; }
-  .tertiary { background: #f1f3f3; color: #373c41; }
-  .ghost { background: transparent; color: #373c41; }
-  .link { background: transparent; color: #008858; text-decoration: underline; padding: 0 8px; min-height: auto; }
-  .disabled { background: #ebecee; color: #b4b8bb; cursor: not-allowed; }
+  .default { background: var(--button-background-primary-solid); color: var(--button-foreground-primary-on-solid); }
+  .destructive { background: var(--button-background-negative-solid); color: var(--button-foreground-primary-on-solid); }
+  .outline { background: transparent; color: var(--button-foreground-primary-on-transparent); border: 1px solid var(--button-stroke-primary); }
+  .secondary { background: var(--button-background-secondary-subtle); color: var(--button-foreground-secondary-on-subtle); }
+  .tertiary { background: var(--background-neutral-medium); color: var(--foreground-neutral-light); }
+  .ghost { background: transparent; color: var(--foreground-neutral-light); }
+  .link { background: transparent; color: var(--foreground-primary-default); text-decoration: underline; padding: 0 8px; min-height: auto; }
+  .disabled { background: var(--button-background-disabled); color: var(--button-foreground-disabled); cursor: not-allowed; }
 </style></head><body>
 <div class="card">
   <div class="row">

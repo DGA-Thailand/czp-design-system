@@ -4,17 +4,17 @@
   body { background: var(--canvas-bright); }
   .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
   .card-ex {
-    background: #fff;
-    border: 1px solid #ebecee;
+    background: var(--canvas-white);
+    border: 1px solid var(--stroke-neutral-lighter);
     border-radius: 12px;
     padding: 16px;
   }
   .plain { box-shadow: none; }
-  .elevated { box-shadow: 0 4px 6px -1px rgba(62, 67, 76, 0.05); border-color: transparent; }
-  .highlighted { background: #ebfaf4; border-color: #adebd2; }
-  .kicker { font-size: 11px; font-weight: 600; color: #62676c; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 6px; }
-  .title { font-size: 16px; font-weight: 600; color: #25272a; margin-bottom: 4px; }
-  .body { font-size: 14px; color: #373c41; line-height: 20px; }
+  .elevated { box-shadow: var(--shadow-custom); border-color: transparent; }
+  .highlighted { background: var(--background-primary-lighter); border-color: var(--primary-90); }
+  .kicker { font-size: 11px; font-weight: 600; color: var(--foreground-neutral-lighter); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 6px; }
+  .title { font-size: 16px; font-weight: 600; color: var(--foreground-neutral-default); margin-bottom: 4px; }
+  .body { font-size: 14px; color: var(--foreground-neutral-light); line-height: 20px; }
 </style></head><body>
 <div class="card">
   <div class="grid">
@@ -29,9 +29,9 @@
       <div class="body">สามารถยื่นผ่านช่องทางออนไลน์ได้ตลอด 24 ชั่วโมง</div>
     </div>
     <div class="card-ex highlighted">
-      <div class="kicker" style="color:#006643">Highlighted</div>
-      <div class="title" style="color:#003d28">บริการใหม่</div>
-      <div class="body" style="color:#006643">ตรวจสอบสิทธิประโยชน์ของท่านได้ที่นี่</div>
+      <div class="kicker" style="color:var(--foreground-primary-dark)">Highlighted</div>
+      <div class="title" style="color:var(--primary-10)">บริการใหม่</div>
+      <div class="body" style="color:var(--foreground-primary-dark)">ตรวจสอบสิทธิประโยชน์ของท่านได้ที่นี่</div>
     </div>
   </div>
 </div>

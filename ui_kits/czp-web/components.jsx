@@ -24,17 +24,17 @@ UI.Button = function Button({ variant = "default", size = "md", loading, disable
     fontFamily: "inherit",
   };
   const variants = {
-    default: { background: "#008858", color: "#fff" },
-    destructive: { background: "#d92d20", color: "#fff" },
-    outline: { background: "transparent", color: "#006643", border: "1px solid #006643" },
-    secondary: { background: "#dfe7f6", color: "#325fb4" },
-    tertiary: { background: "#f1f3f3", color: "#373c41" },
-    ghost: { background: "transparent", color: "#373c41" },
-    link: { background: "transparent", color: "#008858", textDecoration: "underline", padding: "0 4px", minHeight: "auto" },
-    white: { background: "#fff", color: "#25272a", boxShadow: "0 1px 2px rgba(0,0,0,.05)" },
+    default: { background: "var(--button-background-primary-solid)", color: "var(--button-foreground-primary-on-solid)" },
+    destructive: { background: "var(--button-background-negative-solid)", color: "var(--button-foreground-primary-on-solid)" },
+    outline: { background: "transparent", color: "var(--button-foreground-primary-on-transparent)", border: "1px solid var(--button-stroke-primary)" },
+    secondary: { background: "var(--button-background-secondary-subtle)", color: "var(--button-foreground-secondary-on-subtle)" },
+    tertiary: { background: "var(--background-neutral-medium)", color: "var(--foreground-neutral-light)" },
+    ghost: { background: "transparent", color: "var(--foreground-neutral-light)" },
+    link: { background: "transparent", color: "var(--foreground-primary-default)", textDecoration: "underline", padding: "0 4px", minHeight: "auto" },
+    white: { background: "var(--button-background-fixed-solid)", color: "var(--foreground-neutral-default)", boxShadow: "0 1px 2px rgba(0,0,0,.05)" },
   };
   const style = { ...base, ...(variants[variant] || variants.default) };
-  if (disabled) { style.background = "#ebecee"; style.color = "#b4b8bb"; style.border = "none"; }
+  if (disabled) { style.background = "var(--button-background-disabled)"; style.color = "var(--button-foreground-disabled)"; style.border = "none"; }
   return (
     <button style={style} className={className} onClick={disabled ? undefined : onClick} disabled={disabled} {...rest}>
       {loading && <span style={{width:16,height:16,border:"2px solid currentColor",borderRightColor:"transparent",borderRadius:"50%",animation:"spin 1s linear infinite"}}></span>}
@@ -48,11 +48,11 @@ UI.IconButton = function IconButton({ children, variant = "default", size = "md"
   const sizes = { sm: 32, md: 44, lg: 48 };
   const d = sizes[size] || 44;
   const styles = {
-    default: { background: "transparent", color: "#373c41" },
-    fill: { background: "#f1f3f3", color: "#25272a" },
-    primary: { background: "#008858", color: "#fff" },
-    secondary: { background: "#dfe7f6", color: "#325fb4" },
-    negative: { background: "#d92d20", color: "#fff" },
+    default: { background: "transparent", color: "var(--foreground-neutral-light)" },
+    fill: { background: "var(--background-neutral-medium)", color: "var(--foreground-neutral-default)" },
+    primary: { background: "var(--button-background-primary-solid)", color: "var(--button-foreground-primary-on-solid)" },
+    secondary: { background: "var(--button-background-secondary-subtle)", color: "var(--button-foreground-secondary-on-subtle)" },
+    negative: { background: "var(--button-background-negative-solid)", color: "var(--button-foreground-primary-on-solid)" },
   };
   return (
     <button aria-label={aria} onClick={onClick} style={{
@@ -66,15 +66,15 @@ UI.IconButton = function IconButton({ children, variant = "default", size = "md"
 // ============== BADGE ==============
 UI.Badge = function Badge({ variant = "default", children }) {
   const v = {
-    default: { background: "#008858", color: "#fff", border: "1px solid transparent" },
-    secondary: { background: "#eff3fa", color: "#325fb4", border: "1px solid #c3d2ee" },
-    destructive: { background: "#d92d20", color: "#fff", border: "1px solid transparent" },
-    success: { background: "#17b26a", color: "#fff", border: "1px solid transparent" },
-    outline: { background: "transparent", color: "#25272a", border: "1px solid #dde0e2" },
-    warningSoft: { background: "#fef0c7", color: "#93370d", border: "1px solid #fedf89" },
-    infoSoft: { background: "#f0f9ff", color: "#026aa2", border: "1px solid #b9e6fe" },
-    successSoft: { background: "#ecfdf3", color: "#085d3a", border: "1px solid #a9efc5" },
-    dangerSoft: { background: "#fef3f2", color: "#912018", border: "1px solid #fecdca" },
+    default: { background: "var(--button-background-primary-solid)", color: "var(--button-foreground-primary-on-solid)", border: "1px solid transparent" },
+    secondary: { background: "var(--background-secondary-lighter)", color: "var(--foreground-secondary-default)", border: "1px solid var(--secondary-80)" },
+    destructive: { background: "var(--button-background-negative-solid)", color: "var(--canvas-white)", border: "1px solid transparent" },
+    success: { background: "var(--background-positive-medium)", color: "var(--canvas-white)", border: "1px solid transparent" },
+    outline: { background: "transparent", color: "var(--foreground-neutral-default)", border: "1px solid var(--stroke-neutral-default)" },
+    warningSoft: { background: "var(--warning-90)", color: "var(--foreground-warning-dark)", border: "1px solid var(--warning-80)" },
+    infoSoft: { background: "var(--background-info-light)", color: "var(--info-30)", border: "1px solid var(--info-80)" },
+    successSoft: { background: "var(--background-positive-light)", color: "var(--foreground-positive-dark)", border: "1px solid var(--positive-80)" },
+    dangerSoft: { background: "var(--background-negative-light)", color: "var(--foreground-negative-dark)", border: "1px solid var(--danger-80)" },
   };
   return (
     <span style={{
@@ -94,14 +94,14 @@ UI.Badge = function Badge({ variant = "default", children }) {
 // ============== INPUT ==============
 UI.Input = function Input({ label, value, onChange, placeholder, error, disabled, type = "text", helper, icon }) {
   const [focused, setFocused] = React.useState(false);
-  const labelColor = error ? "#d92d20" : focused ? "#008858" : "#2a2d31";
-  const borderColor = error ? "#d92d20" : focused ? "#008858" : "#dde0e2";
-  const bg = error && focused ? "#fef3f2" : disabled ? "#ebecee" : "#fff";
+  const labelColor = error ? "var(--input-label-error)" : focused ? "var(--input-label-focused)" : "var(--input-label-default)";
+  const borderColor = error ? "var(--input-stroke-error)" : focused ? "var(--input-stroke-focused)" : "var(--input-stroke-default)";
+  const bg = error && focused ? "var(--input-background-error-focused)" : disabled ? "var(--input-background-disabled)" : "var(--input-background-default)";
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
       {label && <label style={{ fontSize: 12, fontWeight: 500, color: labelColor }}>{label}</label>}
       <div style={{ position: "relative" }}>
-        {icon && <span style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", color: "#62676c", pointerEvents: "none" }}>{icon}</span>}
+        {icon && <span style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", color: "var(--foreground-neutral-lighter)", pointerEvents: "none" }}>{icon}</span>}
         <input
           type={type}
           value={value}
@@ -117,17 +117,17 @@ UI.Input = function Input({ label, value, onChange, placeholder, error, disabled
             borderRadius: 12,
             padding: icon ? "12px 14px 12px 40px" : "12px 14px",
             background: bg,
-            color: disabled ? "#8b9094" : "#151618",
+            color: disabled ? "var(--input-input-placeholder)" : "var(--input-input-default)",
             fontSize: 16,
             minHeight: 48,
             fontFamily: "inherit",
-            outline: focused ? "2px solid " + (error ? "#fef3f2" : "#ebfaf4") : "none",
+            outline: focused ? "2px solid " + (error ? "var(--input-background-error-focused)" : "var(--background-primary-lighter)") : "none",
             outlineOffset: 0,
           }}
         />
       </div>
-      {error && <div style={{ color: "#d92d20", fontSize: 12 }}>{error}</div>}
-      {helper && !error && <div style={{ color: "#62676c", fontSize: 12 }}>{helper}</div>}
+      {error && <div style={{ color: "var(--foreground-negative-default)", fontSize: 12 }}>{error}</div>}
+      {helper && !error && <div style={{ color: "var(--foreground-neutral-lighter)", fontSize: 12 }}>{helper}</div>}
     </div>
   );
 };
@@ -136,11 +136,11 @@ UI.Input = function Input({ label, value, onChange, placeholder, error, disabled
 UI.Card = function Card({ children, elevated, padding = 16, style, ...rest }) {
   return (
     <div style={{
-      background: "#fff",
-      border: elevated ? "1px solid transparent" : "1px solid #ebecee",
+      background: "var(--canvas-white)",
+      border: elevated ? "1px solid transparent" : "1px solid var(--stroke-neutral-lighter)",
       borderRadius: 12,
       padding,
-      boxShadow: elevated ? "0 4px 6px -1px rgba(62,67,76,.05)" : "none",
+      boxShadow: elevated ? "var(--shadow-custom)" : "none",
       ...style,
     }} {...rest}>{children}</div>
   );
@@ -151,14 +151,14 @@ UI.Avatar = function Avatar({ children, size = "md", tone = "primary" }) {
   const sizes = { sm: 28, md: 44, lg: 64 };
   const fonts = { sm: 12, md: 16, lg: 22 };
   const tones = {
-    primary: "linear-gradient(135deg, #00b274, #008858)",
-    secondary: "linear-gradient(135deg, #5f88d3, #325fb4)",
-    neutral: "#ebecee",
+    primary: "linear-gradient(135deg, var(--primary-40), var(--primary-30-base))",
+    secondary: "linear-gradient(135deg, var(--secondary-60), var(--secondary-40-main))",
+    neutral: "var(--background-neutral-dark)",
   };
   return (
     <div style={{
       width: sizes[size], height: sizes[size], borderRadius: "1000px",
-      background: tones[tone], color: tone === "neutral" ? "#62676c" : "#fff",
+      background: tones[tone], color: tone === "neutral" ? "var(--foreground-neutral-lighter)" : "var(--canvas-white)",
       display: "inline-flex", alignItems: "center", justifyContent: "center",
       fontWeight: 600, fontSize: fonts[size], flexShrink: 0,
     }}>{children}</div>
@@ -174,25 +174,25 @@ UI.Switch = function Switch({ checked, onChange, label }) {
     }}>
       <span style={{
         position: "relative", width: 44, height: 24, borderRadius: 1000,
-        background: checked ? "#008858" : "#dde0e2", transition: ".2s",
+        background: checked ? "var(--primary-30-base)" : "var(--stroke-neutral-default)", transition: ".2s",
       }}>
         <span style={{
           position: "absolute", top: 2, left: checked ? 22 : 2,
-          width: 20, height: 20, borderRadius: "50%", background: "#fff",
+          width: 20, height: 20, borderRadius: "50%", background: "var(--canvas-white)",
           boxShadow: "0 1px 2px rgba(0,0,0,.2)", transition: ".2s",
         }} />
       </span>
-      {label && <span style={{ fontSize: 14, color: "#25272a" }}>{label}</span>}
+      {label && <span style={{ fontSize: 14, color: "var(--foreground-neutral-default)" }}>{label}</span>}
     </button>
   );
 };
 
 // ============== TYPOGRAPHY ==============
-UI.H1 = ({children, style}) => <h1 style={{fontSize:32, lineHeight:"40px", fontWeight:600, color:"#25272a", margin:0, ...style}}>{children}</h1>;
-UI.H2 = ({children, style}) => <h2 style={{fontSize:24, lineHeight:"32px", fontWeight:600, color:"#25272a", margin:0, ...style}}>{children}</h2>;
-UI.H3 = ({children, style}) => <h3 style={{fontSize:18, lineHeight:"26px", fontWeight:600, color:"#25272a", margin:0, ...style}}>{children}</h3>;
-UI.P = ({children, style}) => <p style={{fontSize:16, lineHeight:"24px", color:"#373c41", margin:0, ...style}}>{children}</p>;
-UI.Muted = ({children, style}) => <span style={{fontSize:14, color:"#62676c", ...style}}>{children}</span>;
+UI.H1 = ({children, style}) => <h1 style={{fontSize:32, lineHeight:"40px", fontWeight:600, color:"var(--foreground-neutral-default)", margin:0, ...style}}>{children}</h1>;
+UI.H2 = ({children, style}) => <h2 style={{fontSize:24, lineHeight:"32px", fontWeight:600, color:"var(--foreground-neutral-default)", margin:0, ...style}}>{children}</h2>;
+UI.H3 = ({children, style}) => <h3 style={{fontSize:18, lineHeight:"26px", fontWeight:600, color:"var(--foreground-neutral-default)", margin:0, ...style}}>{children}</h3>;
+UI.P = ({children, style}) => <p style={{fontSize:16, lineHeight:"24px", color:"var(--foreground-neutral-light)", margin:0, ...style}}>{children}</p>;
+UI.Muted = ({children, style}) => <span style={{fontSize:14, color:"var(--foreground-neutral-lighter)", ...style}}>{children}</span>;
 
 // ============== ICONS (lucide-style inline) ==============
 UI.Icon = function Icon({ name, size = 20, color = "currentColor" }) {

@@ -6,15 +6,15 @@
 <style>
   .row { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; margin: 16px 0; }
   .sw { position: relative; width: 44px; height: 24px; background: var(--stroke-neutral-default); border-radius: 1000px; }
-  .sw::after { content:''; position:absolute; top:2px; left:2px; width:20px; height:20px; border-radius:50%; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.2); }
-  .sw.on { background: var(--primary-30-base); }
+  .sw::after { content:''; position:absolute; top:2px; left:2px; width:20px; height:20px; border-radius:50%; background:var(--canvas-white); box-shadow:0 1px 2px rgba(0,0,0,.2); }
+  .sw.on { background: var(--foreground-primary-default); }
   .sw.on::after { left: 22px; }
-  .cb { width: 20px; height: 20px; border-radius: 6px; border: 1.5px solid var(--stroke-neutral-default); background: #fff; display: inline-flex; align-items: center; justify-content: center; }
-  .cb.on { background: var(--primary-30-base); border-color: var(--primary-30-base); color: #fff; font-size: 13px; font-weight: 700; }
-  .r { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid var(--stroke-neutral-default); background: #fff; display: inline-flex; align-items: center; justify-content: center; }
-  .r.on { border-color: var(--primary-30-base); }
-  .r.on::after { content:''; width: 10px; height: 10px; border-radius: 50%; background: var(--primary-30-base); }
-  .lab { font-size: 14px; color: var(--foreground-neutral-dark); display: flex; align-items: center; gap: 8px; }
+  .cb { width: 20px; height: 20px; border-radius: 6px; border: 1.5px solid var(--stroke-neutral-default); background: var(--canvas-white); display: inline-flex; align-items: center; justify-content: center; }
+  .cb.on { background: var(--foreground-primary-default); border-color: var(--stroke-primary-default); color: var(--canvas-white); font-size: 13px; font-weight: 700; }
+  .r { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid var(--stroke-neutral-default); background: var(--canvas-white); display: inline-flex; align-items: center; justify-content: center; }
+  .r.on { border-color: var(--stroke-primary-default); }
+  .r.on::after { content:''; width: 10px; height: 10px; border-radius: 50%; background: var(--foreground-primary-default); }
+  .lab { font-size: 14px; color: var(--foreground-neutral-default); display: flex; align-items: center; gap: 8px; }
 </style>
 </head>
 <body>
