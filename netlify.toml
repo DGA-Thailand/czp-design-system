@@ -10,22 +10,26 @@
 [[redirects]]
   from = "/docs"
   to = "/docs/index.html"
-  status = 200
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/foundations/*"
   to = "/docs/foundations/:splat"
-  status = 200
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/components/*"
   to = "/docs/components/:splat"
-  status = 200
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/resources/*"
   to = "/docs/resources/:splat"
-  status = 200
+  status = 301
+  force = true
 
 [[headers]]
   for = "/fonts/*"
