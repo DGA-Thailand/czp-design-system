@@ -4,7 +4,8 @@
 [[redirects]]
   from = "/"
   to = "/docs/index.html"
-  status = 200
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/docs"
