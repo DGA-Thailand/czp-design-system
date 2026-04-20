@@ -6,12 +6,18 @@
 <style>
   .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
   .field { display: flex; flex-direction: column; gap: 6px; }
-  .lbl { font-size: 12px; color: var(--foreground-neutral-dark); font-weight: 500; }
-  .input { border: 1px solid var(--stroke-neutral-default); border-radius: 12px; padding: 12px 14px; background: #fff; color: var(--foreground-neutral-dark); font-size: 16px; min-height: 48px; box-sizing: border-box; font-family: inherit; }
-  .input.focused { border-color: var(--primary-30-base); outline: 2px solid var(--primary-95); }
-  .input.error { border-color: var(--danger-50-main); background: var(--background-danger-lighter); }
-  .err { color: var(--danger-50-main); font-size: 12px; }
-  .input.disabled { background: var(--neutral-94); color: var(--neutral-70); }
+  .lbl { font-size: 12px; color: var(--input-label-default); font-weight: 500; }
+  .input { border: 1px solid var(--stroke-neutral-default); border-radius: 12px; padding: 12px 14px; background: var(--input-background-default); color: var(--input-input-default); font-size: 16px; min-height: 48px; box-sizing: border-box; font-family: inherit; }
+  .input.focused { border-color: var(--input-stroke-focused); outline: 2px solid var(--background-primary-lighter); }
+  .input.error { border-color: var(--input-stroke-error); background: var(--input-background-error-focused); }
+  .err { color: var(--foreground-negative-default); font-size: 12px; }
+  .input.disabled { background: var(--input-background-disabled); color: var(--input-input-placeholder); }
+  /* Real focus states */
+  .input:focus { border-color: var(--input-stroke-focused); outline: 2px solid var(--background-primary-lighter); background: var(--input-background-focused); }
+  .input.error:focus { border-color: var(--input-stroke-error); outline: 2px solid var(--background-negative-light); background: var(--input-background-error-focused); }
+  .input.disabled:focus { outline: none; }
+  .field:focus-within .lbl { color: var(--input-label-focused); }
+  .field:has(.error):focus-within .lbl { color: var(--input-label-error); }
 </style>
 </head>
 <body>
@@ -25,7 +31,7 @@
     <h2>สถานะ</h2>
     <div class="grid2">
       <div class="field"><label class="lbl">อีเมล</label><input class="input focused" value="citizen@example.co.th"></div>
-      <div class="field"><label class="lbl" style="color:var(--danger-50-main)">รหัสผ่าน</label><input class="input error" type="password" value="••••"><div class="err">รหัสผ่านสั้นเกินไป</div></div>
+      <div class="field"><label class="lbl" style="color:var(--input-label-error)">รหัสผ่าน</label><input class="input error" type="password" value="••••"><div class="err">รหัสผ่านสั้นเกินไป</div></div>
       <div class="field"><label class="lbl">ชื่อ-นามสกุล</label><input class="input" placeholder="กรุณากรอกชื่อ"></div>
       <div class="field"><label class="lbl">เลขประจำตัว</label><input class="input disabled" value="1-2345-67890-12-3" disabled></div>
     </div>
