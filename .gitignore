@@ -33,3 +33,9 @@ out/
 # Temporary files from design tool
 _debug/
 scraps/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
