@@ -197,6 +197,30 @@ All colors are defined in `src/app/[locale]/globals.css` under `:root`.
 | primary-a40 | `--a-primary-a40` | `#00b27466` |
 | primary-a60 | `--a-primary-a60` | `#00b27499` |
 | primary-a80 | `--a-primary-a80` | `#00b274cc` |
+| negative-a05 | `--a-negative-a05` | `#f044380d` |
+| negative-a10 | `--a-negative-a10` | `#f044381a` |
+| negative-a20 | `--a-negative-a20` | `#f0443833` |
+| negative-a40 | `--a-negative-a40` | `#f0443866` |
+| negative-a60 | `--a-negative-a60` | `#f0443899` |
+| negative-a80 | `--a-negative-a80` | `#f04438cc` |
+| positive-a05 | `--a-positive-a05` | `#17b26a0d` |
+| positive-a10 | `--a-positive-a10` | `#17b26a1a` |
+| positive-a20 | `--a-positive-a20` | `#17b26a33` |
+| positive-a40 | `--a-positive-a40` | `#17b26a66` |
+| positive-a60 | `--a-positive-a60` | `#17b26a99` |
+| positive-a80 | `--a-positive-a80` | `#12b76acc` *(base differs from a05–a60 — as defined in source)* |
+| secondary-a05 | `--a-secondary-a05` | `#00669b0d` |
+| secondary-a10 | `--a-secondary-a10` | `#00669b1a` |
+| secondary-a20 | `--a-secondary-a20` | `#00669b33` |
+| secondary-a40 | `--a-secondary-a40` | `#00669b66` |
+| secondary-a60 | `--a-secondary-a60` | `#00669b99` |
+| secondary-a80 | `--a-secondary-a80` | `#00669bcc` |
+| warning-a05 | `--a-warning-a05` | `#fdb0220d` |
+| warning-a10 | `--a-warning-a10` | `#fdb0221a` |
+| warning-a20 | `--a-warning-a20` | `#fdb02233` |
+| warning-a40 | `--a-warning-a40` | `#fdb02266` |
+| warning-a60 | `--a-warning-a60` | `#fdb02299` |
+| warning-a80 | `--a-warning-a80` | `#fdb022cc` |
 
 ### 3.9 Semantic Color Roles
 
@@ -206,12 +230,16 @@ Access pattern: `text-[var(--foreground-neutral-default)]` or `bg-[var(--backgro
 
 | CSS Variable | Resolves To | Hex | Usage |
 |---|---|---|---|
+| `--background-fixed-neutral-a-medium` | `--a-dark-a60` | `#15161899` | Fixed neutral overlay (dark semi-transparent) |
+| `--background-fixed-primary-dark` | `--primary-20` | `#006643` | Fixed primary dark bg |
+| `--background-fixed-primary-medium` | `--primary-50` | `#34c57e` | Fixed primary medium bg |
 | `--background-primary-dark` | `--primary-30-base` | `#008858` | Primary dark bg |
 | `--background-primary-darker` | `--primary-20` | `#006643` | Darker primary bg |
 | `--background-primary-medium` | `--primary-40` | `#00b274` | Medium primary bg |
 | `--background-primary-light` | `--primary-90` | `#adebd2` | Light primary bg |
 | `--background-primary-lighter` | `--primary-95` | `#ebfaf4` | Lightest primary bg |
 | `--background-secondary-dark` | `--secondary-30` | `#274b8c` | Secondary dark bg |
+| `--background-secondary-darker` | `--secondary-20` | `#1f3c70` | Darker secondary bg |
 | `--background-secondary-medium` | `--secondary-40-main` | `#325fb4` | Medium secondary bg |
 | `--background-secondary-light` | `--secondary-90` | `#dfe7f6` | Light secondary bg |
 | `--background-secondary-lighter` | `--secondary-95` | `#eff3fa` | Lightest secondary bg |
@@ -220,19 +248,31 @@ Access pattern: `text-[var(--foreground-neutral-default)]` or `bg-[var(--backgro
 | `--background-neutral-medium` | `--neutral-96` | `#f1f3f3` | Medium neutral bg |
 | `--background-neutral-dark` | `--neutral-94` | `#ebecee` | Dark neutral bg |
 | `--background-neutral-darkest` | `--neutral-92` | `#e4e6e8` | Darkest neutral bg |
+| `--background-neutral-a-subtle` | `--a-dark-a05` | `#1516180d` | Very subtle dark overlay bg |
+| `--background-neutral-transparent` | `--a-light-transparent` | `#ffffff00` | Fully transparent white bg |
+| `--background-neutral-revert-dark` | `--neutral-15` | `#1d1f21` | Revert dark neutral bg (on dark surfaces) |
+| `--background-neutral-revert-darkest` | `--neutral-10` | `#151618` | Revert darkest neutral bg |
+| `--background-neutral-revert-light` | `--neutral-25` | `#2a2d31` | Revert light neutral bg |
+| `--background-neutral-revert-lighter` | `--neutral-30` | `#2f3337` | Revert lighter neutral bg |
+| `--background-neutral-revert-medium` | `--neutral-20` | `#25272a` | Revert medium neutral bg |
+| `--background-neutral-revert-transparent` | `--a-light-transparent` | `#ffffff00` | Revert transparent bg |
 | `--background-negative-dark` | `--danger-20` | `#912018` | Error/danger dark bg |
+| `--background-negative-darker` | `--danger-10` | `#7a271a` | Error/danger darker bg |
 | `--background-negative-medium` | `--danger-50` | `#f04438` | Error medium bg |
 | `--background-negative-light` | `--danger-95` | `#fef3f2` | Error light bg |
 | `--background-negative-lighter` | `--danger-99` | `#fffbfa` | Error lightest bg |
 | `--background-positive-dark` | `--positive-20` | `#085d3a` | Success dark bg |
+| `--background-positive-darker` | `--positive-10` | `#074d31` | Success darker bg |
 | `--background-positive-medium` | `--positive-50` | `#17b26a` | Success medium bg |
 | `--background-positive-light` | `--positive-95` | `#ecfdf3` | Success light bg |
 | `--background-positive-lighter` | `--positive-99` | `#f6fef9` | Success lightest bg |
 | `--background-warning-dark` | `--warning-20` | `#93370d` | Warning dark bg |
+| `--background-warning-darker` | `--warning-10` | `#7a2e0e` | Warning darker bg |
 | `--background-warning-medium` | `--warning-50` | `#f79009` | Warning medium bg |
 | `--background-warning-light` | `--warning-95` | `#fffaeb` | Warning light bg |
 | `--background-warning-lighter` | `--warning-99` | `#fffcf5` | Warning lightest bg |
 | `--background-info-dark` | `--info-30` | `#026aa2` | Info dark bg |
+| `--background-info-darker` | `--info-10` | `#0b4a6f` | Info darker bg |
 | `--background-info-medium` | `--info-50` | `#0ba5ec` | Info medium bg |
 | `--background-info-light` | `--info-95` | `#f0f9ff` | Info light bg |
 | `--background-info-lighter` | `--info-99` | `#f5fbff` | Info lightest bg |
@@ -241,49 +281,149 @@ Access pattern: `text-[var(--foreground-neutral-default)]` or `bg-[var(--backgro
 
 | CSS Variable | Resolves To | Hex | Usage |
 |---|---|---|---|
+| `--foreground-fixed-brand-primary` | `--primary-40` | `#00b274` | Fixed brand primary text (on dark surfaces) |
+| `--foreground-fixed-brand-secondary` | `--secondary-50` | `#396bc8` | Fixed brand secondary text (on dark surfaces) |
+| `--foreground-fixed-neutral-base` | `--neutral-98` | `#f8f9f9` | Fixed neutral base text (on dark surfaces) |
+| `--foreground-fixed-neutral-dark` | `--neutral-90` | `#dde0e2` | Fixed neutral dark text (on dark surfaces) |
+| `--foreground-fixed-neutral-darker` | `--neutral-80` | `#b4b8bb` | Fixed neutral darker text (on dark surfaces) |
 | `--foreground-neutral-default` | `--neutral-20` | `#25272a` | Primary text |
 | `--foreground-neutral-light` | `--neutral-40` | `#373c41` | Secondary text |
 | `--foreground-neutral-lighter` | `--neutral-60` | `#62676c` | Tertiary/hint text |
 | `--foreground-neutral-lightest` | `--neutral-80` | `#b4b8bb` | Disabled text |
+| `--foreground-neutral-revert-default` | `--neutral-98` | `#f8f9f9` | Revert neutral text (on dark surfaces) |
+| `--foreground-neutral-revert-dark` | `--neutral-90` | `#dde0e2` | Revert neutral dark text |
+| `--foreground-neutral-revert-darker` | `--neutral-80` | `#b4b8bb` | Revert neutral darker text |
+| `--foreground-neutral-revert-lightest` | `--neutral-70` | `#8b9094` | Revert neutral lightest text |
 | `--foreground-primary-default` | `--primary-30-base` | `#008858` | Primary brand text |
 | `--foreground-primary-dark` | `--primary-20` | `#006643` | Dark primary text |
 | `--foreground-primary-light` | `--primary-60` | `#5ed49a` | Light primary text |
+| `--foreground-primary-lightest` | `--primary-80` | `#8de3b8` | Lightest primary text |
+| `--foreground-primary-revert-default` | `--primary-100` | `#ffffff` | Revert primary text |
+| `--foreground-primary-revert-dark` | `--primary-80` | `#8de3b8` | Revert primary dark text |
+| `--foreground-primary-revert-lightest` | `--primary-60` | `#5ed49a` | Revert primary lightest text |
 | `--foreground-negative-default` | `--danger-40` | `#d92d20` | Error/danger text |
 | `--foreground-negative-dark` | `--danger-20` | `#912018` | Dark error text |
+| `--foreground-negative-light` | `--danger-60` | `#f97066` | Light error text |
+| `--foreground-negative-lightest` | `--danger-80` | `#fecdca` | Lightest error text |
+| `--foreground-negative-revert-default` | `--danger-100` | `#ffffff` | Revert error text |
+| `--foreground-negative-revert-dark` | `--danger-80` | `#fecdca` | Revert error dark text |
+| `--foreground-negative-revert-lightest` | `--danger-60` | `#f97066` | Revert error lightest text |
 | `--foreground-positive-default` | `--positive-40` | `#079455` | Success text |
 | `--foreground-positive-dark` | `--positive-20` | `#085d3a` | Dark success text |
+| `--foreground-positive-light` | `--positive-60` | `#47cd89` | Light success text |
+| `--foreground-positive-lightest` | `--positive-80` | `#a9efc5` | Lightest success text |
+| `--foreground-positive-revert-default` | `--positive-100` | `#ffffff` | Revert success text |
+| `--foreground-positive-revert-dark` | `--positive-80` | `#a9efc5` | Revert success dark text |
+| `--foreground-positive-revert-darker` | `--positive-60` | `#47cd89` | Revert success darker text |
 | `--foreground-warning-default` | `--warning-40` | `#dc6803` | Warning text |
 | `--foreground-warning-dark` | `--warning-20` | `#93370d` | Dark warning text |
+| `--foreground-warning-light` | `--warning-60` | `#fdb022` | Light warning text |
+| `--foreground-warning-lighter` | `--warning-80` | `#fedf89` | Lighter warning text |
+| `--foreground-warning-revert-default` | `--warning-100` | `#ffffff` | Revert warning text |
+| `--foreground-warning-revert-dark` | `--warning-80` | `#fedf89` | Revert warning dark text |
+| `--foreground-warning-revert-lightest` | `--warning-60` | `#fdb022` | Revert warning lightest text |
 | `--foreground-info-default` | `--info-50` | `#0ba5ec` | Info text |
+| `--foreground-info-dark` | `--info-20` | `#003c66` | Dark info text |
+| `--foreground-info-light` | `--info-90` | `#addfff` | Light info text |
+| `--foreground-info-lightest` | `--info-95` | `#f0f9ff` | Lightest info text |
 | `--foreground-secondary-default` | `--secondary-40-main` | `#325fb4` | Secondary brand text |
+| `--foreground-secondary-dark` | `--secondary-30` | `#274b8c` | Dark secondary text |
+| `--foreground-secondary-light` | `--secondary-60` | `#5f88d3` | Light secondary text |
+| `--foreground-secondary-lightest` | `--secondary-80` | `#c3d2ee` | Lightest secondary text |
+| `--foreground-secondary-revert-default` | `--secondary-100` | `#ffffff` | Revert secondary text |
+| `--foreground-secondary-revert-dark` | `--secondary-80` | `#c3d2ee` | Revert secondary dark text |
+| `--foreground-secondary-revert-lightest` | `--secondary-60` | `#5f88d3` | Revert secondary lightest text |
 
 #### Stroke / Border Tokens
 
 | CSS Variable | Resolves To | Hex | Usage |
 |---|---|---|---|
+| `--stroke-fixed-black` | `--neutral-0` | `#000000` | Fixed black border (always black regardless of theme) |
+| `--stroke-fixed-white` | `--neutral-100` | `#ffffff` | Fixed white border (always white regardless of theme) |
 | `--stroke-neutral-default` | `--neutral-90` | `#dde0e2` | Default border |
 | `--stroke-neutral-lighter` | `--neutral-94` | `#ebecee` | Light border |
 | `--stroke-neutral-lightest` | `--neutral-96` | `#f1f3f3` | Lightest border |
 | `--stroke-primary-default` | `--primary-30-base` | `#008858` | Primary border |
 | `--stroke-primary-lighter` | `--primary-60` | `#5ed49a` | Light primary border |
+| `--stroke-primary-lightest` | `--primary-80` | `#8de3b8` | Lightest primary border |
 | `--stroke-secondary-default` | `--secondary-60` | `#5f88d3` | Secondary border |
+| `--stroke-secondary-lighter` | `--secondary-80` | `#c3d2ee` | Light secondary border |
+| `--stroke-secondary-lightest` | `--secondary-90` | `#dfe7f6` | Lightest secondary border |
 
 #### Button Tokens
 
 | CSS Variable | Resolves To | Hex | Usage |
 |---|---|---|---|
 | `--button-background-primary-solid` | `--primary-30-base` | `#008858` | Primary button bg |
+| `--button-background-primary-solid-revert` | `--primary-90` | `#adebd2` | Primary button bg (on dark surfaces) |
+| `--button-background-primary-subtle` | `--primary-95` | `#ebfaf4` | Primary subtle button bg |
+| `--button-background-primary-subtle-revert` | `--primary-10` | `#003d28` | Primary subtle button bg (revert) |
+| `--button-background-primary-selected` | `--primary-95` | `#ebfaf4` | Primary selected button bg |
 | `--button-foreground-primary-on-solid` | `--primary-100` | `#ffffff` | Text on primary button |
+| `--button-foreground-primary-on-subtle` | `--primary-20` | `#006643` | Text on primary subtle button |
+| `--button-foreground-primary-on-transparent` | `--primary-20` | `#006643` | Outline button text |
+| `--button-foreground-primary-on-revert` | `--primary-10` | `#003d28` | Text on primary revert button |
+| `--button-foreground-primary-on-revert-alt` | `--primary-80` | `#8de3b8` | Alt text on primary revert button |
+| `--button-foreground-primary-selected` | `--primary-20` | `#006643` | Primary selected text |
 | `--button-background-negative-solid` | `--danger-40` | `#d92d20` | Destructive button bg |
+| `--button-background-negative-solid-revert` | `--danger-90` | `#fee4e2` | Destructive button bg (revert) |
+| `--button-background-negative-subtle` | `--danger-95` | `#fef3f2` | Destructive subtle button bg |
+| `--button-background-negative-subtle-revert` | `--danger-10` | `#7a271a` | Destructive subtle button bg (revert) |
+| `--button-foreground-negative-on-solid` | `--danger-100` | `#ffffff` | Text on destructive button |
+| `--button-foreground-negative-on-subtle` | `--danger-30` | `#b42318` | Text on destructive subtle button |
+| `--button-foreground-negative-on-transparent` | `--danger-40` | `#d92d20` | Transparent destructive button text |
+| `--button-foreground-negative-on-revert` | `--danger-30` | `#b42318` | Text on destructive revert button |
+| `--button-foreground-negative-on-revert-alt` | `--danger-80` | `#fecdca` | Alt text on destructive revert button |
+| `--button-background-secondary-solid` | `--secondary-40-main` | `#325fb4` | Secondary solid button bg |
+| `--button-background-secondary-solid-revert` | `--secondary-90` | `#dfe7f6` | Secondary solid button bg (revert) |
 | `--button-background-secondary-subtle` | `--secondary-90` | `#dfe7f6` | Secondary button bg |
+| `--button-background-secondary-subtle-revert` | `--secondary-10` | `#142748` | Secondary subtle button bg (revert) |
+| `--button-foreground-secondary-on-solid` | `--secondary-100` | `#ffffff` | Text on secondary solid button |
 | `--button-foreground-secondary-on-subtle` | `--secondary-40-main` | `#325fb4` | Secondary button text |
+| `--button-foreground-secondary-on-transparent` | `--secondary-40-main` | `#325fb4` | Transparent secondary button text |
+| `--button-foreground-secondary-on-revert` | `--secondary-30` | `#274b8c` | Text on secondary revert button |
+| `--button-foreground-secondary-on-revert-alt` | `--secondary-80` | `#c3d2ee` | Alt text on secondary revert button |
+| `--button-background-neutral-solid` | `--neutral-30` | `#2f3337` | Neutral solid button bg |
+| `--button-background-neutral-solid-revert` | `--neutral-100` | `#ffffff` | Neutral solid button bg (revert) |
+| `--button-background-neutral-subtle` | `--neutral-96` | `#f1f3f3` | Neutral subtle button bg |
+| `--button-background-neutral-subtle-revert` | `--neutral-25` | `#2a2d31` | Neutral subtle button bg (revert) |
+| `--button-background-neutral-unselected` | `--neutral-96` | `#f1f3f3` | Neutral unselected button bg |
+| `--button-foreground-neutral-fixed` | `--neutral-40` | `#373c41` | Tertiary outline text |
+| `--button-foreground-neutral-fixed-revert` | `--neutral-98` | `#f8f9f9` | Tertiary outline text (revert) |
+| `--button-foreground-neutral-on-solid` | `--neutral-98` | `#f8f9f9` | Text on neutral solid button |
+| `--button-foreground-neutral-on-subtle` | `--neutral-40` | `#373c41` | Text on neutral subtle button |
+| `--button-foreground-neutral-on-transparent` | `--neutral-40` | `#373c41` | Transparent neutral button text |
+| `--button-foreground-neutral-on-revert` | `--neutral-40` | `#373c41` | Text on neutral revert button |
+| `--button-foreground-neutral-on-revert-alt` | `--neutral-98` | `#f8f9f9` | Alt text on neutral revert button |
 | `--button-background-disabled` | `--neutral-94` | `#ebecee` | Disabled button bg |
 | `--button-foreground-disabled` | `--neutral-80` | `#b4b8bb` | Disabled button text |
 | `--button-background-fixed-solid` | `--neutral-100` | `#ffffff` | White button bg |
+| `--button-background-fixed-solid-revert` | `--neutral-30` | `#2f3337` | White button bg (revert) |
+| `--button-background-fixed-subtle` | `--a-light-a20` | `#ffffff33` | Fixed subtle button bg (translucent white) |
+| `--button-background-fixed-subtle-revert` | `--a-dark-a20` | `#15161833` | Fixed subtle button bg (revert, translucent dark) |
 | `--button-stroke-primary` | `--primary-20` | `#006643` | Outline button border |
-| `--button-foreground-primary-on-transparent` | `--primary-20` | `#006643` | Outline button text |
+| `--button-stroke-secondary` | `--secondary-40-main` | `#325fb4` | Secondary outline border |
+| `--button-stroke-negative` | `--danger-40` | `#d92d20` | Destructive outline border |
 | `--button-stroke-fixed` | `--neutral-90` | `#dde0e2` | Tertiary outline border |
-| `--button-foreground-neutral-fixed` | `--neutral-40` | `#373c41` | Tertiary outline text |
+| `--button-stroke-fixed-revert` | `--neutral-98` | `#f8f9f9` | Tertiary outline border (revert) |
+| `--button-stroke-revert` | `--neutral-98` | `#f8f9f9` | Revert outline border |
+| `--button-stroke-disabled` | `--neutral-94` | `#ebecee` | Disabled button border |
+| `--button-stroke-nuetral` ⚠️ | `--neutral-90` | `#dde0e2` | Neutral outline border *(note: "nuetral" is a typo in source CSS — do not "fix" this name)* |
+| `--button-foreground-informative-on-subtle` | *(hardcoded)* | `#002a41` | Informative subtle button text |
+| `--button-foreground-success-on-subtle` | `--positive-20` | `#085d3a` | Success subtle button text |
+| `--button-foreground-warning-on-subtle` | `--warning-20` | `#93370d` | Warning subtle button text |
+
+#### Badge Tokens
+
+| CSS Variable | Resolves To | Hex | Usage |
+|---|---|---|---|
+| `--badge-stroke` | `--neutral-96` | `#f1f3f3` | Badge border |
+| `--badge-background-default` | `--danger-40` | `#d92d20` | Default (destructive) badge bg |
+| `--badge-background-primary` | `--primary-40` | `#00b274` | Primary badge bg |
+| `--badge-background-secondary` | `--secondary-40-main` | `#325fb4` | Secondary badge bg |
+| `--badge-foreground-default` | `--danger-100` | `#ffffff` | Default badge text |
+| `--badge-foreground-primary` | `--danger-100` | `#ffffff` | Primary badge text *(uses --danger-100 in source — white)* |
+| `--badge-foreground-secondary` | `--danger-100` | `#ffffff` | Secondary badge text *(uses --danger-100 in source — white)* |
 
 #### Canvas Tokens
 
@@ -311,6 +451,120 @@ Access pattern: `text-[var(--foreground-neutral-default)]` or `bg-[var(--backgro
 | `--input-stroke-default` | `--neutral-90` | `#dde0e2` | Input border |
 | `--input-stroke-focused` | `--primary-30-base` | `#008858` | Focused input border |
 | `--input-stroke-error` | `--danger-40` | `#d92d20` | Error input border |
+
+#### Controller Tokens
+
+Used for checkbox, switch, and radio button components.
+
+| CSS Variable | Resolves To | Hex | Usage |
+|---|---|---|---|
+| `--controller-background-unselected` | `--neutral-98` | `#f8f9f9` | Unselected controller bg |
+| `--controller-background-selected` | `--primary-30-base` | `#008858` | Selected controller bg |
+| `--controller-background-selected-alt` | `--primary-95` | `#ebfaf4` | Selected controller bg (alt/subtle) |
+| `--controller-background-disabled` | `--neutral-94` | `#ebecee` | Disabled controller bg |
+| `--controller-background-error` | *(hardcoded)* | `#ffffff` | Error controller bg |
+| `--controller-foreground-unselected` | `--neutral-50` | `#3d4349` | Unselected controller icon/indicator |
+| `--controller-foreground-selected` | `--neutral-98` | `#f8f9f9` | Selected controller icon/indicator |
+| `--controller-foreground-selected-alt` | `--primary-30-base` | `#008858` | Selected controller icon (alt) |
+| `--controller-foreground-disabled` | `--neutral-80` | `#b4b8bb` | Disabled controller icon |
+| `--controller-stroke-unselected` | `--neutral-90` | `#dde0e2` | Unselected controller border |
+| `--controller-stroke-selected` | `--primary-40` | `#00b274` | Selected controller border |
+| `--controller-stroke-default` | `--neutral-80` | `#b4b8bb` | Default controller border |
+| `--controller-stroke-disabled` | `--neutral-94` | `#ebecee` | Disabled controller border |
+| `--controller-stroke-error` | *(hardcoded)* | `#ffffff` | Error controller border |
+
+#### Navigation Tokens
+
+Used for sidebar and navigation bar components.
+
+| CSS Variable | Resolves To | Hex | Usage |
+|---|---|---|---|
+| `--navigation-background-default` | `--neutral-100` | `#ffffff` | Navigation bg |
+| `--navigation-background-selected` | `--primary-30-base` | `#008858` | Active nav item bg |
+| `--navigation-background-selected-subtle` | `--primary-95` | `#ebfaf4` | Active nav item bg (subtle) |
+| `--navigation-foreground-default` | `--neutral-60` | `#62676c` | Inactive nav item text/icon |
+| `--navigation-foreground-selected` | `--primary-30-base` | `#008858` | Active nav item text/icon |
+| `--navigation-foreground-selected-alt` | `--primary-100` | `#ffffff` | Active nav item text (on solid bg) |
+| `--navigation-stroke-default` | `--neutral-90` | `#dde0e2` | Navigation border |
+| `--navigation-stroke-selected` | `--primary-30-base` | `#008858` | Active nav item indicator |
+
+#### State Tokens
+
+Used for hover and press states.
+
+| CSS Variable | Resolves To | Value | Usage |
+|---|---|---|---|
+| `--state-neutral-light` | `--a-dark-a05` | `#1516180d` | Neutral hover state overlay |
+| `--state-neutral-dark` | `--a-dark-a10` | `#1516181a` | Neutral pressed state overlay |
+| `--state-primary-light` | `--a-primary-a05` | `#00b2740d` | Primary hover state overlay |
+| `--state-primary-dark` | `--a-primary-a10` | `#00b2741a` | Primary pressed state overlay |
+
+#### System Nav Tokens
+
+Used for system navigation bars (e.g., sticky header backdrop).
+
+| CSS Variable | Resolves To | Value | Usage |
+|---|---|---|---|
+| `--system-nav` | `--a-dark-a60` | `#15161899` | System nav overlay (semi-transparent dark) |
+| `--system-nav-darker` | `--a-dark-a80` | `#303030cc` | System nav overlay darker variant |
+| `--system-nav-fixed` | `--a-light-a60` | `#ffffff99` | System nav overlay (fixed, semi-transparent light) |
+| `--system-nav-fixed-darker` | `--a-light-a80` | `#ffffffcc` | System nav overlay (fixed, darker variant) |
+
+#### Utility Token
+
+| CSS Variable | Value | Usage |
+|---|---|---|
+| `--color` | `#ffffff` | General white color utility (defined in `:root`, used for various white text/icon contexts) |
+
+---
+
+### 3.10 shadcn/ui Theme Variables
+
+These variables are defined in the `:root` block at the top of `globals.css` (lines 56–102) and are used internally by **shadcn/ui** component primitives. They form a separate "theme layer" from the design system semantic tokens above.
+
+> **Two-layer system**: shadcn/ui components consume the `--background`, `--primary`, `--border`, etc. variables automatically. Custom code should prefer the **semantic design tokens** (e.g., `--background-primary-lighter`, `--stroke-neutral-default`) over these shadcn variables, unless directly styling shadcn components.
+
+| Variable | Value | Notes |
+|---|---|---|
+| `--radius` | `0.65rem` | Base radius used by `@theme inline` calc() for Tailwind's `rounded-sm/md/lg/xl` |
+| `--background` | `#ffffff` | shadcn page background base |
+| `--foreground` | `#000000` | shadcn page foreground base |
+| `--card` | `#ffffff` | shadcn card background |
+| `--card-foreground` | `#000000` | shadcn card foreground |
+| `--popover` | `#ffffff` | shadcn popover background — used by Toast normal/loading |
+| `--popover-foreground` | `#000000` | shadcn popover foreground — used by Toast normal |
+| `--primary` | `#008858` | shadcn primary — maps to `--primary-30-base` |
+| `--primary-foreground` | `#ffffff` | shadcn primary foreground |
+| `--secondary` | `#E0F2FE` | shadcn secondary ⚠️ **Different from `--secondary-*` palette** (which is blue) |
+| `--secondary-foreground` | `#ffffff` | shadcn secondary foreground |
+| `--tertiary` | `#F1F3F3` | shadcn tertiary — maps to `--neutral-96` |
+| `--tertiary-foreground` | `#373C41` | shadcn tertiary foreground — maps to `--neutral-40` |
+| `--muted` | `#f5f5f5` | shadcn muted background |
+| `--muted-foreground` | `#6b7280` | shadcn muted foreground |
+| `--accent` | `#F1F3F3` | shadcn accent — maps to `--neutral-96` |
+| `--accent-foreground` | `#373C41` | shadcn accent foreground — maps to `--neutral-40` |
+| `--destructive` | `#dc2626` | shadcn destructive ⚠️ **Different from `--danger-40` (`#d92d20`)** |
+| `--border` | `#e5e7eb` | shadcn border ⚠️ **Different from `--stroke-neutral-default` (`#dde0e2`)** |
+| `--input` | `#e5e7eb` | shadcn input border ⚠️ **Different from `--stroke-neutral-default` (`#dde0e2`)** |
+| `--ring` | `transparent` | shadcn focus ring |
+| `--chart-1` | `#00B274` | Chart color 1 |
+| `--chart-2` | `#DF1278` | Chart color 2 |
+| `--chart-3` | `#3b82f6` | Chart color 3 |
+| `--chart-4` | `#f59e0b` | Chart color 4 |
+| `--chart-5` | `#8b5cf6` | Chart color 5 |
+| `--sidebar` | `#ffffff` | Sidebar background |
+| `--sidebar-foreground` | `#000000` | Sidebar text |
+| `--sidebar-primary` | `#00B274` | Sidebar primary accent |
+| `--sidebar-primary-foreground` | `#ffffff` | Sidebar primary text |
+| `--sidebar-accent` | `#e8f9f3` | Sidebar active item bg |
+| `--sidebar-accent-foreground` | `#006644` | Sidebar active item text |
+| `--sidebar-border` | `#e5e7eb` | Sidebar border |
+| `--sidebar-ring` | `#00b274` | Sidebar focus ring |
+
+> ⚠️ **Known inconsistencies in the shadcn theme layer:**
+> - `--destructive` (`#dc2626`) differs from `--danger-40` (`#d92d20`) — use `--button-background-negative-solid` for design-system-compliant destructive actions
+> - `--border` / `--input` (`#e5e7eb`) differs from `--stroke-neutral-default` (`#dde0e2`) — use `--stroke-neutral-default` in custom code
+> - `--secondary` (shadcn, `#E0F2FE`) differs from the `--secondary-*` palette (blue tones) — use `--background-secondary-*` tokens in custom code
 
 ---
 
@@ -372,6 +626,8 @@ Access pattern:
 | `--font-weight-700` | 700 |
 | `--font-weight-800` | 800 |
 | `--font-weight-900` | 900 |
+| `--font-weight-950` | 950 |
+| `--font-weight-1000` | 1000 |
 
 ### 4.4 Typography Components
 
@@ -449,6 +705,16 @@ All radius tokens are defined in `src/app/[locale]/globals.css`.
 Access patterns:
 - CSS: `border-radius: var(--radius-xl);`
 - Tailwind: `rounded-[var(--radius-xl)]`
+
+> ⚠️ **`@theme inline` radius note**: The `@theme inline` block (lines 41–44 of `globals.css`) also defines calculated radius values for Tailwind's built-in utility classes:
+> - `rounded-sm` → `calc(var(--radius) - 4px)` ≈ 2.4px
+> - `rounded-md` → `calc(var(--radius) - 2px)` ≈ 4.4px
+> - `rounded-lg` → `var(--radius)` ≈ 10.4px
+> - `rounded-xl` → `calc(var(--radius) + 4px)` ≈ 14.4px
+>
+> *(Approximations assume the default browser base font size of 16px. `--radius: 0.65rem` = 10.4px at 16px. Values will differ if users have changed their browser base font size.)*
+>
+> These `@theme`-calculated values differ from the explicit `:root` design system tokens (e.g., `--radius-sm: 6px`, `--radius-xl: 12px`). **Prefer the explicit `rounded-[var(--radius-xl)]` pattern** over bare Tailwind `rounded-xl` to ensure design system token values are used.
 
 | Token | CSS Variable | Value |
 |---|---|---|
@@ -595,12 +861,14 @@ Toast styling uses CSS custom properties for semantic colors:
 
 | Toast Type | Icon Container Background | Toast Background | Text Token | Icon Color | Icon |
 |---|---|---|---|---|---|
-| success | `--button-background-positive-subtle` | `--background-positive-subtle` | `--foreground-positive-dark` | `--foreground-positive-dark` | check_circle |
-| info | `--button-background-primary-subtle` (`--primary-95`) | `--background-primary-subtle` | `--foreground-primary-dark` | `--foreground-primary-dark` | info_outline |
-| warning | `--button-background-warning-subtle` | `--background-warning-subtle` | `--foreground-warning-dark` | `--foreground-warning-dark` | warning |
+| success | `--button-background-positive-subtle` | `--background-positive-subtle` ⚠️ | `--foreground-positive-dark` | `--foreground-positive-dark` | check_circle |
+| info | `--button-background-primary-subtle` (`--primary-95`) | `--background-primary-subtle` ⚠️ | `--foreground-primary-dark` | `--foreground-primary-dark` | info_outline |
+| warning | `--button-background-warning-subtle` | `--background-warning-subtle` ⚠️ | `--foreground-warning-dark` | `--foreground-warning-dark` | warning |
 | error | *(none)* | `--background-negative-light` (`--danger-95`) | `--foreground-warning-dark` ⚠️ | `--foreground-negative-dark` | error_outline |
-| loading | `--button-background-primary-subtle` (`--primary-95`) | `--popover` | `--foreground-primary-dark` | `--foreground-primary-dark` | Loader2 (spin) |
-| normal | *(none)* | `--popover` | `--popover-foreground` | — | — |
+| loading | `--button-background-primary-subtle` (`--primary-95`) | `--popover` (`#ffffff`) | `--foreground-primary-dark` | `--foreground-primary-dark` | Loader2 (spin) |
+| normal | *(none)* | `--popover` (`#ffffff`) | `--popover-foreground` (`#000000`) | — | — |
+
+> ⚠️ **Known bug — non-existent tokens**: The toast `style` prop sets `--success-bg: var(--background-positive-subtle)`, `--warning-bg: var(--background-warning-subtle)`, and `--info-bg: var(--background-primary-subtle)`. These tokens (`--background-positive-subtle`, `--background-warning-subtle`, `--background-primary-subtle`) **do not exist** in `globals.css`. Only `--button-background-*-subtle` variants exist. As a result, the toast background for success/warning/info will fall back to the browser default (likely white). This is a known bug in `sonner.tsx`. The `--popover` token (`#ffffff`, documented in section 3.10) provides white for loading and normal toasts.
 
 > ⚠️ The error toast title/description text uses `--foreground-warning-dark` (via `--error-text` CSS var in `sonner.tsx`) while the icon uses `--foreground-negative-dark`. This is an inconsistency in the current implementation — when creating new toast styles, prefer `--foreground-negative-dark` for error state text as well.
 
@@ -1060,3 +1328,19 @@ When a design token changes (e.g., from a Figma update), **update BOTH repositor
 | Font change | `pubspec.yaml` + `app_typography.dart` | `src/app/[locale]/layout.tsx` — next/font/google |
 
 > **Tip for AI agents**: If asked to change a design token value, remind the developer that the same change should be applied to the other platform repository ([czp-mobile](https://github.com/dga-devops/czp-mobile/blob/develop/DESIGN.md)).
+
+---
+
+## 18. Known Issues & Inconsistencies
+
+This section documents known bugs and value mismatches between the design system tokens, the shadcn/ui theme layer, and component implementations. These are tracked here for awareness — do **not** "fix" them by silently changing token values, as changes may have cross-platform implications.
+
+| # | Issue | Details |
+|---|---|---|
+| 1 | **`--destructive` ≠ `--danger-40`** | shadcn `--destructive` = `#dc2626`; design system `--danger-40` = `#d92d20`. Use `--button-background-negative-solid` (→ `--danger-40`) for design-system-compliant destructive actions. |
+| 2 | **`--border` / `--input` ≠ `--stroke-neutral-default`** | shadcn `--border` / `--input` = `#e5e7eb`; design system `--stroke-neutral-default` = `#dde0e2`. Use `--stroke-neutral-default` in custom code. |
+| 3 | **`--secondary` (shadcn) ≠ secondary palette** | shadcn `--secondary` = `#E0F2FE` (light cyan-blue); design system `--secondary-*` palette is a blue tone (`#325fb4` base). Use `--background-secondary-*` tokens in custom code. |
+| 4 | **`--button-stroke-nuetral` typo** | Token name has a typo ("nuetral" instead of "neutral") in `globals.css` line 515. Do **not** rename it — component code may reference this exact name. Document and use the typo'd name as-is. |
+| 5 | **Toast references non-existent `--background-*-subtle` tokens** | `sonner.tsx` sets `--success-bg: var(--background-positive-subtle)`, `--warning-bg: var(--background-warning-subtle)`, `--info-bg: var(--background-primary-subtle)`. None of these tokens exist in `globals.css` — only `--button-background-*-subtle` variants exist. Toast backgrounds for success/warning/info will fall back to browser default (white). |
+| 6 | **`--primary-70` has same value as `--primary-60`** | Both `--primary-60` and `--primary-70` are `#5ed49a`. This appears to be a design token definition issue. |
+| 7 | **Error toast text uses wrong semantic token** | Error toast uses `--foreground-warning-dark` for text (via the `--error-text` CSS custom prop in `sonner.tsx`) while the icon uses `--foreground-negative-dark`. Should use `--foreground-negative-dark` for both. |

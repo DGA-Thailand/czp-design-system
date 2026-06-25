@@ -14,13 +14,13 @@
     align-items: center;
     gap: 4px;
   }
-  .b-default { background: #008858; color: #fff; }
-  .b-secondary { background: #eff3fa; color: #325fb4; border-color: #c3d2ee; }
-  .b-destructive { background: #d92d20; color: #fff; }
-  .b-success { background: #17b26a; color: #fff; }
-  .b-outline { background: transparent; color: #25272a; border-color: #dde0e2; }
-  .b-warning-soft { background: #fef0c7; color: #93370d; border-color: #fedf89; }
-  .b-info-soft { background: #f0f9ff; color: #026aa2; border-color: #b9e6fe; }
+  .b-default { background: var(--button-background-primary-solid); color: var(--button-foreground-primary-on-solid); }
+  .b-secondary { background: var(--background-secondary-lighter); color: var(--foreground-secondary-default); border-color: var(--secondary-80); }
+  .b-destructive { background: var(--button-background-negative-solid); color: var(--canvas-white); }
+  .b-success { background: var(--background-positive-medium); color: var(--canvas-white); }
+  .b-outline { background: transparent; color: var(--foreground-neutral-default); border-color: var(--stroke-neutral-default); }
+  .b-warning-soft { background: var(--warning-90); color: var(--foreground-warning-dark); border-color: var(--warning-80); }
+  .b-info-soft { background: var(--background-info-light); color: var(--info-30); border-color: var(--info-80); }
   .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 </style></head><body>
 <div class="card">

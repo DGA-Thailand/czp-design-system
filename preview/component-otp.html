@@ -5,12 +5,12 @@
   .row { display: flex; gap: 12px; }
   .otp { display: flex; gap: 8px; }
   .cell {
-    width: 44px; height: 52px; border-radius: 10px; border: 1.5px solid #dde0e2; background: #fff;
-    display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 600; color: #25272a;
+    width: 44px; height: 52px; border-radius: 10px; border: 1.5px solid var(--stroke-neutral-default); background: var(--canvas-white);
+    display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 600; color: var(--foreground-neutral-default);
   }
-  .cell.focus { border-color: #008858; outline: 3px solid #ebfaf4; }
-  .cell.err { border-color: #d92d20; color: #d92d20; }
-  .lbl { font-size: 11px; color: #62676c; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; margin-bottom: 6px; }
+  .cell.focus { border-color: var(--stroke-primary-default); outline: 3px solid var(--background-primary-lighter); }
+  .cell.err { border-color: var(--foreground-negative-default); color: var(--foreground-negative-default); }
+  .lbl { font-size: 11px; color: var(--foreground-neutral-lighter); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; margin-bottom: 6px; }
   .col { display: flex; flex-direction: column; gap: 0; }
 </style></head><body>
 <div class="card">

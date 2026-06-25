@@ -5,17 +5,17 @@
   .brand { display: flex; align-items: center; gap: 16px; }
   .mark {
     width: 56px; height: 56px; border-radius: 14px;
-    background: #008858;
+    background: var(--background-primary-dark);
     display: flex; align-items: center; justify-content: center;
-    color: #fff; font-weight: 700; font-size: 22px;
+    color: var(--canvas-white); font-weight: 700; font-size: 22px;
     box-shadow: 0 4px 6px -1px rgba(62,67,76,.08);
   }
   .wordmark { display: flex; flex-direction: column; gap: 2px; }
-  .title { font-weight: 700; font-size: 20px; color: #25272a; letter-spacing: -0.01em; }
-  .sub { font-size: 12px; color: #62676c; font-weight: 500; }
+  .title { font-weight: 700; font-size: 20px; color: var(--foreground-neutral-default); letter-spacing: -0.01em; }
+  .sub { font-size: 12px; color: var(--foreground-neutral-lighter); font-weight: 500; }
   .row { display: flex; gap: 40px; align-items: center; margin-top: 8px; }
-  .dark-mark { background: #25272a; }
-  .outline-mark { background: #fff; border: 1.5px solid #008858; color: #008858; }
+  .dark-mark { background: var(--neutral-20); }
+  .outline-mark { background: var(--canvas-white); border: 1.5px solid var(--primary-30-base); color: var(--foreground-primary-default); }
 </style></head><body>
 <div class="card">
   <div class="row">
